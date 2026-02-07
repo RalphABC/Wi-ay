@@ -1,0 +1,198 @@
+/* ===================================
+   SECCIÓN GALERÍA
+   =================================== */
+
+   .gallery {
+    background-color: var(--bg-white);
+}
+
+.gallery__filters {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.gallery__filter {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--bg-light);
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: all var(--transition-base);
+}
+
+.gallery__filter:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.gallery__filter.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.gallery__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    aspect-ratio: 16 / 9;
+    transition: all var(--transition-base);
+}
+
+.gallery__item.hidden {
+    display: none;
+}
+
+.gallery__item:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-xl);
+}
+
+.gallery__item img,
+.gallery__item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all var(--transition-slow);
+}
+
+.gallery__item:hover img,
+.gallery__item:hover video {
+    transform: scale(1.1);
+}
+
+.gallery__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    padding: var(--spacing-md);
+    transform: translateY(100%);
+    transition: transform var(--transition-base);
+}
+
+.gallery__item:hover .gallery__overlay {
+    transform: translateY(0);
+}
+
+.gallery__overlay h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xs);
+    color: white;
+}
+
+.gallery__overlay p {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.gallery__play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    color: var(--primary-color);
+    pointer-events: none;
+    transition: all var(--transition-base);
+}
+
+.gallery__item:hover .gallery__play-icon {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: white;
+}
+
+/* Modal */
+.gallery__modal {
+    display: none;
+    position: fixed;
+    z-index: var(--z-modal);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.gallery__modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery__modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: var(--radius-md);
+    animation: zoomIn 0.3s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.gallery__close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.gallery__close:hover {
+    color: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+.gallery__caption {
+    text-align: center;
+    color: white;
+    padding: var(--spacing-md);
+    font-size: var(--font-size-lg);
+    margin-top: var(--spacing-md);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery__grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .gallery__close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+}

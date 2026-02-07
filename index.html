@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto WIÑAY - Malnutrición, microbiota intestinal y trastorno del espectro autista en niños de Ecuador">
+    <meta name="keywords" content="autismo, TEA, microbiota, malnutrición, Ecuador, niños, investigación">
+    <title>Proyecto WIÑAY | Investigación TEA Ecuador</title>
+    
+    <!-- Estilos CSS - Orden importa: primero global, luego específicos -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/research.css">
+    <link rel="stylesheet" href="assets/css/gallery.css">
+    <link rel="stylesheet" href="assets/css/team.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+<body>
+    
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <h1>WIÑAY</h1>
+            </div>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item"><a href="#inicio" class="nav__link">Inicio</a></li>
+                <li class="nav__item"><a href="#sobre-proyecto" class="nav__link">El Proyecto</a></li>
+                <li class="nav__item"><a href="#investigacion" class="nav__link">Investigación</a></li>
+                <li class="nav__item"><a href="#galeria" class="nav__link">Galería</a></li>
+                <li class="nav__item"><a href="#equipo" class="nav__link">Equipo</a></li>
+                <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+            </ul>
+            
+            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero__container container">
+            <div class="hero__content">
+                <h1 class="hero__title" id="hero-title">Cargando...</h1>
+                <p class="hero__subtitle" id="hero-subtitle">Cargando...</p>
+                <div class="hero__buttons">
+                    <a href="#sobre-proyecto" class="btn btn--primary">Conocer más</a>
+                    <a href="#contacto" class="btn btn--secondary">Contactar</a>
+                </div>
+            </div>
+            <div class="hero__image">
+                <img id="hero-image" src="" alt="Proyecto WIÑAY">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE EL PROYECTO -->
+    <section class="about" id="sobre-proyecto">
+        <div class="container">
+            <h2 class="section__title" id="about-title">Sobre el Proyecto</h2>
+            <div class="about__content">
+                <div class="about__text">
+                    <p id="about-description">Cargando...</p>
+                    <div class="about__stats" id="about-stats">
+                        <!-- Se llenará dinámicamente desde JSON -->
+                    </div>
+                </div>
+                <div class="about__media">
+                    <video id="about-video" controls poster="">
+                        <source src="" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN INVESTIGACIÓN -->
+    <section class="research" id="investigacion">
+        <div class="container">
+            <h2 class="section__title">Áreas de Investigación</h2>
+            <div class="research__grid" id="research-grid">
+                <!-- Se llenará dinámicamente desde JSON -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN GALERÍA -->
+    <section class="gallery" id="galeria">
+        <div class="container">
+            <h2 class="section__title">Galería Multimedia</h2>
+            
+            <div class="gallery__filters">
+                <button class="gallery__filter active" data-filter="all">Todos</button>
+                <button class="gallery__filter" data-filter="images">Imágenes</button>
+                <button class="gallery__filter" data-filter="videos">Videos</button>
+            </div>
+            
+            <div class="gallery__grid" id="gallery-grid">
+                <!-- Se llenará dinámicamente desde JSON -->
+            </div>
+        </div>
+        
+        <!-- Modal para imágenes -->
+        <div class="gallery__modal" id="gallery-modal">
+            <span class="gallery__close">&times;</span>
+            <img class="gallery__modal-content" id="modal-image">
+            <div class="gallery__caption" id="modal-caption"></div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN EQUIPO -->
+    <section class="team" id="equipo">
+        <div class="container">
+            <h2 class="section__title">Nuestro Equipo</h2>
+            <div class="team__grid" id="team-grid">
+                <!-- Se llenará dinámicamente desde JSON -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2 class="section__title">Contáctanos</h2>
+            <div class="contact__content">
+                <div class="contact__info" id="contact-info">
+                    <!-- Se llenará dinámicamente desde JSON -->
+                </div>
+                <form class="contact__form" id="contact-form">
+                    <div class="form__group">
+                        <input type="text" name="name" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form__group">
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="form__group">
+                        <input type="text" name="subject" placeholder="Asunto" required>
+                    </div>
+                    <div class="form__group">
+                        <textarea name="message" rows="5" placeholder="Mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Proyecto WIÑAY</h3>
+                    <p id="footer-description">Cargando...</p>
+                </div>
+                <div class="footer__section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer__links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#sobre-proyecto">El Proyecto</a></li>
+                        <li><a href="#investigacion">Investigación</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3>Redes Sociales</h3>
+                    <div class="footer__social" id="footer-social">
+                        <!-- Se llenará dinámicamente desde JSON -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; <span id="current-year"></span> Proyecto WIÑAY - Ecuador. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript - Orden importa: primero utilidades, luego app principal -->
+    <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/gallery.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/app.js"></script>
+    
+</body>
+</html>

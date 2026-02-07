@@ -1,0 +1,208 @@
+{
+    "hero": {
+      "title": "Proyecto WIÑAY",
+      "subtitle": "Malnutrición, alteraciones de la microbiota intestinal y su relación con alteraciones neuroconductuales en niños y niñas con Trastorno del Espectro Autista en Ecuador",
+      "image": "assets/images/hero-image.jpg"
+    },
+    "about": {
+      "title": "Sobre el Proyecto WIÑAY",
+      "description": "El Proyecto WIÑAY (que significa 'crecer' en quechua) es una investigación innovadora que estudia la relación entre la malnutrición, las alteraciones de la microbiota intestinal y el Trastorno del Espectro Autista (TEA) en niños ecuatorianos. Nuestro objetivo es comprender mejor cómo la nutrición y la salud intestinal impactan el desarrollo neuroconductual en niños con TEA, para desarrollar intervenciones efectivas que mejoren su calidad de vida.",
+      "video": "assets/videos/about-video.mp4",
+      "videoPoster": "assets/images/video-poster.jpg",
+      "stats": [
+        {
+          "number": "500+",
+          "label": "Niños participantes"
+        },
+        {
+          "number": "15",
+          "label": "Instituciones colaboradoras"
+        },
+        {
+          "number": "3",
+          "label": "Años de investigación"
+        },
+        {
+          "number": "20+",
+          "label": "Publicaciones científicas"
+        }
+      ]
+    },
+    "research": [
+      {
+        "icon": "🧬",
+        "title": "Microbiota Intestinal",
+        "description": "Estudiamos la composición y diversidad de la microbiota intestinal en niños con TEA y su relación con síntomas gastrointestinales y conductuales.",
+        "points": [
+          "Análisis metagenómico",
+          "Identificación de biomarcadores",
+          "Estudios de correlación"
+        ]
+      },
+      {
+        "icon": "🍎",
+        "title": "Nutrición y Malnutrición",
+        "description": "Evaluamos el estado nutricional, patrones alimentarios y deficiencias nutricionales en niños con TEA en Ecuador.",
+        "points": [
+          "Evaluación antropométrica",
+          "Análisis de ingesta dietética",
+          "Detección de déficits nutricionales"
+        ]
+      },
+      {
+        "icon": "🧠",
+        "title": "Desarrollo Neuroconductual",
+        "description": "Investigamos cómo las alteraciones intestinales y nutricionales impactan el desarrollo cognitivo y conductual en TEA.",
+        "points": [
+          "Evaluaciones neurocognitivas",
+          "Análisis de conducta",
+          "Estudios longitudinales"
+        ]
+      },
+      {
+        "icon": "💊",
+        "title": "Intervenciones Terapéuticas",
+        "description": "Desarrollamos y evaluamos intervenciones nutricionales y probióticas para mejorar síntomas en niños con TEA.",
+        "points": [
+          "Suplementación probiótica",
+          "Planes nutricionales personalizados",
+          "Seguimiento de resultados"
+        ]
+      }
+    ],
+    "gallery": {
+      "items": [
+        {
+          "type": "image",
+          "src": "assets/images/gallery/research-lab.jpg",
+          "title": "Laboratorio de Investigación",
+          "description": "Instalaciones de última generación para análisis microbiológico"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/gallery/team-meeting.jpg",
+          "title": "Equipo de Investigación",
+          "description": "Reunión del equipo multidisciplinario del proyecto"
+        },
+        {
+          "type": "video",
+          "src": "assets/videos/gallery/field-work.mp4",
+          "poster": "assets/images/gallery/field-work-poster.jpg",
+          "title": "Trabajo de Campo",
+          "description": "Recolección de datos en comunidades ecuatorianas"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/gallery/children-activity.jpg",
+          "title": "Actividades con Niños",
+          "description": "Sesiones de evaluación neuroconductual"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/gallery/nutrition-workshop.jpg",
+          "title": "Talleres de Nutrición",
+          "description": "Capacitación a familias sobre alimentación saludable"
+        },
+        {
+          "type": "video",
+          "src": "assets/videos/gallery/results-presentation.mp4",
+          "poster": "assets/images/gallery/results-poster.jpg",
+          "title": "Presentación de Resultados",
+          "description": "Compartiendo hallazgos con la comunidad científica"
+        }
+      ]
+    },
+    "team": [
+      {
+        "name": "Dra. María Elena Rodríguez",
+        "role": "Directora del Proyecto",
+        "bio": "Especialista en neurología pediátrica con 15 años de experiencia en TEA",
+        "image": "assets/images/team/maria-rodriguez.jpg",
+        "expertise": ["Neurología", "TEA", "Pediatría"],
+        "social": {
+          "email": "maria.rodriguez@universidad.edu.ec",
+          "linkedin": "#"
+        }
+      },
+      {
+        "name": "Dr. Carlos Mendoza",
+        "role": "Investigador Principal - Microbiología",
+        "bio": "Microbiólogo con especialización en microbiota intestinal",
+        "image": "assets/images/team/carlos-mendoza.jpg",
+        "expertise": ["Microbiología", "Metagenómica", "Probióticos"],
+        "social": {
+          "email": "carlos.mendoza@universidad.edu.ec",
+          "linkedin": "#"
+        }
+      },
+      {
+        "name": "Dra. Ana Cristina López",
+        "role": "Nutricionista Investigadora",
+        "bio": "Experta en nutrición pediátrica y trastornos del desarrollo",
+        "image": "assets/images/team/ana-lopez.jpg",
+        "expertise": ["Nutrición", "Pediatría", "Dietética"],
+        "social": {
+          "email": "ana.lopez@universidad.edu.ec",
+          "linkedin": "#"
+        }
+      },
+      {
+        "name": "Dr. Luis Fernando García",
+        "role": "Psicólogo Clínico",
+        "bio": "Especialista en evaluación neuroconductual en niños con TEA",
+        "image": "assets/images/team/luis-garcia.jpg",
+        "expertise": ["Psicología", "Neuropsicología", "TEA"],
+        "social": {
+          "email": "luis.garcia@universidad.edu.ec",
+          "linkedin": "#"
+        }
+      }
+    ],
+    "contact": {
+      "address": {
+        "icon": "📍",
+        "title": "Dirección",
+        "content": "Universidad Central del Ecuador, Facultad de Ciencias Médicas, Quito - Ecuador"
+      },
+      "phone": {
+        "icon": "📞",
+        "title": "Teléfono",
+        "content": "+593 2 XXX-XXXX"
+      },
+      "email": {
+        "icon": "✉️",
+        "title": "Correo Electrónico",
+        "content": "proyecto.winay@universidad.edu.ec"
+      },
+      "hours": {
+        "icon": "🕐",
+        "title": "Horario de Atención",
+        "content": "Lunes a Viernes: 9:00 AM - 5:00 PM"
+      }
+    },
+    "footer": {
+      "description": "Investigación dedicada a mejorar la calidad de vida de niños con TEA en Ecuador a través de la comprensión de la relación entre nutrición, microbiota intestinal y desarrollo neuroconductual.",
+      "social": [
+        {
+          "platform": "Facebook",
+          "url": "#",
+          "icon": "📘"
+        },
+        {
+          "platform": "Twitter",
+          "url": "#",
+          "icon": "🐦"
+        },
+        {
+          "platform": "Instagram",
+          "url": "#",
+          "icon": "📷"
+        },
+        {
+          "platform": "LinkedIn",
+          "url": "#",
+          "icon": "💼"
+        }
+      ]
+    }
+  }
