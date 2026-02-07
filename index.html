@@ -7,6 +7,11 @@
     <meta name="keywords" content="autismo, TEA, microbiota, malnutrición, Ecuador, niños, investigación">
     <title>Proyecto WIÑAY | Investigación TEA Ecuador</title>
     
+    <!-- Fuente Alegreya desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
     <!-- Estilos CSS - Orden importa: primero global, luego específicos -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/header.css">
@@ -20,22 +25,32 @@
 </head>
 <body>
     
-    <!-- HEADER / NAVEGACIÓN -->
+    <!-- ========================================
+         HEADER / NAVEGACIÓN
+         Barra transparente con logo y menú
+         ======================================== -->
     <header class="header" id="header">
         <nav class="nav container">
-            <div class="nav__logo">
-                <h1>WIÑAY</h1>
+            <!-- Logo alineado a la izquierda -->
+            <div class="">
+                <a href="#inicio">
+                 
+                    <!-- Opción 2: Logo como texto (descomenta si no tienes imagen) -->
+                    <!-- <h1>WIÑAY</h1> -->
+                </a>
             </div>
             
+            <!-- Menú de navegación (centro-derecha) -->
             <ul class="nav__menu" id="nav-menu">
-                <li class="nav__item"><a href="#inicio" class="nav__link">Inicio</a></li>
-                <li class="nav__item"><a href="#sobre-proyecto" class="nav__link">El Proyecto</a></li>
-                <li class="nav__item"><a href="#investigacion" class="nav__link">Investigación</a></li>
-                <li class="nav__item"><a href="#galeria" class="nav__link">Galería</a></li>
-                <li class="nav__item"><a href="#equipo" class="nav__link">Equipo</a></li>
-                <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+                <li class="nav__item"><a href="#inicio" class="nav__link active">INICIO</a></li>
+                <li class="nav__item"><a href="#sobre-proyecto" class="nav__link">MISIÓN</a></li>
+                <li class="nav__item"><a href="#investigacion" class="nav__link">INVESTIGACIÓN</a></li>
+                <li class="nav__item"><a href="#galeria" class="nav__link">MULTIMEDIA</a></li>
+                <li class="nav__item"><a href="#equipo" class="nav__link">EQUIPO</a></li>
+                <li class="nav__item"><a href="#contacto" class="nav__link">CONTACTO</a></li>
             </ul>
             
+            <!-- Botón hamburguesa para móviles -->
             <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -44,24 +59,42 @@
         </nav>
     </header>
 
-    <!-- SECCIÓN HERO -->
+    <!-- ========================================
+         SECCIÓN HERO
+         Primera sección con imagen de fondo,
+         overlay morado y contenido principal
+         ======================================== -->
     <section class="hero" id="inicio">
+        <!-- Contenedor del contenido principal -->
         <div class="hero__container container">
             <div class="hero__content">
-                <h1 class="hero__title" id="hero-title">Cargando...</h1>
-                <p class="hero__subtitle" id="hero-subtitle">Cargando...</p>
+                <!-- Título principal con "Wiñay" en amarillo -->
+                <h1 class="hero__title">
+                    Proyecto <span class="hero__highlight">Wiñay</span>
+                </h1>
+                
+                <!-- Subtítulo descriptivo (H3) -->
+                <h3 class="hero__subtitle">
+                    Investigando el vínculo crítico entre la desnutrición, la microbiota intestinal 
+                    y los trastornos neuroconductuales en niños con TEA en Ecuador
+                </h3>
+                
+                <!-- Botón de acción principal -->
                 <div class="hero__buttons">
-                    <a href="#sobre-proyecto" class="btn btn--primary">Conocer más</a>
-                    <a href="#contacto" class="btn btn--secondary">Contactar</a>
+                    <a href="#investigacion" class="btn btn--hero">Explorar proyecto</a>
                 </div>
             </div>
-            <div class="hero__image">
-                <img id="hero-image" src="" alt="Proyecto WIÑAY">
-            </div>
+        </div>
+        
+        <!-- Indicador de scroll animado -->
+        <div class="hero__scroll-indicator">
+            <div class="hero__mouse"></div>
         </div>
     </section>
 
-    <!-- SECCIÓN SOBRE EL PROYECTO -->
+    <!-- ========================================
+         SECCIÓN SOBRE EL PROYECTO
+         ======================================== -->
     <section class="about" id="sobre-proyecto">
         <div class="container">
             <h2 class="section__title" id="about-title">Sobre el Proyecto</h2>
@@ -82,7 +115,9 @@
         </div>
     </section>
 
-    <!-- SECCIÓN INVESTIGACIÓN -->
+    <!-- ========================================
+         SECCIÓN INVESTIGACIÓN
+         ======================================== -->
     <section class="research" id="investigacion">
         <div class="container">
             <h2 class="section__title">Áreas de Investigación</h2>
@@ -92,7 +127,9 @@
         </div>
     </section>
 
-    <!-- SECCIÓN GALERÍA -->
+    <!-- ========================================
+         SECCIÓN GALERÍA
+         ======================================== -->
     <section class="gallery" id="galeria">
         <div class="container">
             <h2 class="section__title">Galería Multimedia</h2>
@@ -116,7 +153,9 @@
         </div>
     </section>
 
-    <!-- SECCIÓN EQUIPO -->
+    <!-- ========================================
+         SECCIÓN EQUIPO
+         ======================================== -->
     <section class="team" id="equipo">
         <div class="container">
             <h2 class="section__title">Nuestro Equipo</h2>
@@ -126,7 +165,9 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CONTACTO -->
+    <!-- ========================================
+         SECCIÓN CONTACTO
+         ======================================== -->
     <section class="contact" id="contacto">
         <div class="container">
             <h2 class="section__title">Contáctanos</h2>
@@ -153,7 +194,9 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer__content">
@@ -183,7 +226,10 @@
         </div>
     </footer>
 
-    <!-- Scripts JavaScript - Orden importa: primero utilidades, luego app principal -->
+    <!-- ========================================
+         Scripts JavaScript
+         Orden: primero utilidades, luego app
+         ======================================== -->
     <script src="assets/js/data-loader.js"></script>
     <script src="assets/js/gallery.js"></script>
     <script src="assets/js/animations.js"></script>

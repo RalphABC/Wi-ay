@@ -1,17 +1,36 @@
 /* ===================================
-   SECCIÓN HERO
+   SECCIÓN HERO - Primera Sección
+   Imagen de fondo "inicio" con overlay morado
+   semi-transparente y contenido centrado
    =================================== */
 
-   .hero {
+.hero {
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    position: relative;
+    justify-content: center;
     overflow: hidden;
-    margin-top: 70px;
+    margin-top: 70px; /* Compensar altura del header fijo */
+    
+    /* ========================================
+       IMAGEN DE FONDO - TU IMAGEN "inicio"
+       Ajusta la extensión según tu archivo:
+       .jpg, .png, .jpeg, .webp
+       ======================================== */
+    background-image: url('../images/inicio.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efecto parallax */
 }
 
+/* ========================================
+   OVERLAY MORADO SEMI-TRANSPARENTE
+   Capa morada que NO cubre completamente
+   la imagen, sino que la deja transparente
+   para que se vea la imagen de fondo
+   ======================================== */
 .hero::before {
     content: '';
     position: absolute;
@@ -19,82 +38,274 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
-    opacity: 0.3;
+    /* Morado con 50% de opacidad - la imagen se ve a través */
+    /* Puedes ajustar entre 0.3 (muy transparente) y 0.8 (más opaco) */
+    background: rgba(75, 0, 130, 0.3);
+    z-index: 1;
+    animation: fadeIn 1s ease-in-out;
+
+
 }
 
-.hero__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
-    align-items: center;
-    position: relative;
+/* Patrón de puntos decorativos (opcional, se puede quitar) */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+    opacity: 0.2;
     z-index: 1;
 }
 
+/* ========================================
+   CONTENEDOR PRINCIPAL
+   ======================================== */
+.hero__container {
+    position: relative;
+    z-index: 2; /* Por encima del overlay */
+    text-align: center;
+    max-width: 1000px;
+    padding: 0 2rem;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* ========== CONTENIDO DE TEXTO ========== */
 .hero__content {
     color: white;
-    animation: fadeInUp 1s ease-out;
 }
 
+/* ========================================
+   TÍTULO: "Proyecto Wiñay"
+   Fuente Alegreya, "Wiñay" en amarillo
+   ======================================== */
 .hero__title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    margin-bottom: var(--spacing-md);
+    font-family: 'Alegreya', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem); /* Responsive */
+    font-weight: 900;
+    margin-bottom: 1.5rem;
     color: white;
-    line-height: 1.1;
+    line-height: 1.2;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
+/* "Wiñay" en AMARILLO con efecto glow (brillo) */
+.hero__highlight {
+    color: #FFD700;
+    text-shadow: 
+        0 0 20px rgba(255, 215, 0, 0.7),
+        0 0 40px rgba(255, 215, 0, 0.5),
+        0 4px 12px rgba(0, 0, 0, 0.4);
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+/* ========================================
+   SUBTÍTULO (H3) - Descripción del proyecto
+   "Investigando el vínculo crítico..."
+   ======================================== */
 .hero__subtitle {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--spacing-lg);
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
+    font-family: 'Alegreya', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.7;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* ========================================
+   BOTONES
+   ======================================== */
 .hero__buttons {
     display: flex;
-    gap: var(--spacing-md);
+    gap: 1rem;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
-.hero__buttons .btn {
-    padding: 1rem 2rem;
-    font-size: var(--font-size-lg);
+/* ========================================
+   BOTÓN "EXPLORAR PROYECTO"
+   AMARILLO con letra MORADA OSCURA
+   ======================================== */
+.btn--hero {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: #FFD700; /* Amarillo */
+    color: #4B0082; /* Morado oscuro */
+    font-family: 'Alegreya', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 
+        0 5px 15px rgba(255, 215, 0, 0.5),
+        0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
 }
 
+/* Efecto hover del botón - se eleva y aumenta sombra */
+.btn--hero:hover {
+    background: #FFC700;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 
+        0 8px 25px rgba(255, 215, 0, 0.7),
+        0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn--hero:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Efecto de onda al hacer clic */
+.btn--hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn--hero:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ========================================
+   BOTONES ADICIONALES (si decides usarlos)
+   Mantiene compatibilidad con diseño anterior
+   ======================================== */
 .hero__buttons .btn--primary {
     background-color: white;
-    color: var(--primary-color);
+    color: var(--primary-color, #667eea);
+    padding: 1rem 2rem;
+    font-size: var(--font-size-lg, 1.125rem);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .hero__buttons .btn--primary:hover {
-    background-color: var(--bg-light);
+    background-color: var(--bg-light, #f8f9fa);
     transform: translateY(-3px);
 }
 
 .hero__buttons .btn--secondary {
-    border-color: white;
+    border: 2px solid white;
     color: white;
+    background: transparent;
+    padding: 1rem 2rem;
+    font-size: var(--font-size-lg, 1.125rem);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .hero__buttons .btn--secondary:hover {
     background-color: white;
-    color: var(--primary-color);
+    color: var(--primary-color, #667eea);
 }
 
+/* ========================================
+   IMAGEN (si decides mantenerla)
+   Ocultamos porque usamos imagen de fondo
+   ======================================== */
 .hero__image {
+    display: none; /* Ocultamos porque usamos background-image */
     animation: fadeIn 1.2s ease-out;
     position: relative;
 }
 
 .hero__image img {
     width: 100%;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-xl);
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: var(--shadow-xl, 0 20px 60px rgba(0, 0, 0, 0.3));
     animation: float 6s ease-in-out infinite;
 }
 
+/* ========================================
+   INDICADOR DE SCROLL (Mouse animado)
+   Indicador decorativo que invita a hacer scroll
+   ======================================== */
+.hero__scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.hero__mouse {
+    width: 25px;
+    height: 40px;
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    position: relative;
+}
+
+/* Bolita animada dentro del mouse */
+.hero__mouse::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: #FFD700;
+    border-radius: 2px;
+    animation: scroll 1.5s ease-in-out infinite;
+}
+
+/* ===================================
+   ANIMACIONES
+   =================================== */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de brillo para "Wiñay" */
+@keyframes glow {
+    from {
+        text-shadow: 
+            0 0 20px rgba(255, 215, 0, 0.7),
+            0 0 40px rgba(255, 215, 0, 0.5);
+    }
+    to {
+        text-shadow: 
+            0 0 30px rgba(255, 215, 0, 0.9),
+            0 0 60px rgba(255, 215, 0, 0.7);
+    }
+}
+
+/* Animación de flotación (para imagen si la usas) */
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
@@ -104,34 +315,98 @@
     }
 }
 
-/* Responsive */
+/* Animación de rebote para el indicador de scroll */
+@keyframes bounce {
+    0%, 100% { 
+        transform: translateX(-50%) translateY(0); 
+    }
+    50% { 
+        transform: translateX(-50%) translateY(-12px); 
+    }
+}
+
+/* Animación de scroll dentro del mouse */
+@keyframes scroll {
+    0% { 
+        opacity: 1; 
+        transform: translateX(-50%) translateY(0); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: translateX(-50%) translateY(18px); 
+    }
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+
 @media (max-width: 968px) {
     .hero__container {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-        text-align: center;
+        padding: 0 1.5rem;
     }
     
-    .hero__buttons {
-        justify-content: center;
+    .hero__title {
+        font-size: clamp(2rem, 5vw, 3rem);
     }
     
-    .hero__image {
-        order: -1;
+    .hero__subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
     }
 }
 
 @media (max-width: 768px) {
     .hero {
-        min-height: auto;
-        padding: var(--spacing-xl) 0;
+        min-height: 90vh;
+        /* Quitar parallax en móvil para mejor rendimiento */
+        background-attachment: scroll;
+    }
+    
+    .hero__container {
+        padding: 0 1.5rem;
     }
     
     .hero__title {
-        font-size: var(--font-size-3xl);
+        margin-bottom: 1.2rem;
     }
     
     .hero__subtitle {
-        font-size: var(--font-size-lg);
+        margin-bottom: 2rem;
+    }
+    
+    .btn--hero {
+        padding: 0.9rem 2.2rem;
+        font-size: 1.1rem;
+    }
+    
+    .hero__scroll-indicator {
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 85vh;
+    }
+    
+    .hero__container {
+        padding: 0 1rem;
+    }
+    
+    .hero__subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .btn--hero {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .hero__buttons {
+        flex-direction: column;
+        align-items: center;
     }
 }
