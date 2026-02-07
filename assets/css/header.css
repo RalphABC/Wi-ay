@@ -1,63 +1,109 @@
 /* ===================================
-   HEADER Y NAVEGACIÓN
+   HEADER Y NAVEGACIÓN TRANSPARENTE
+   Navbar fijo con fondo morado transparente
    =================================== */
 
-   .header {
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-sm);
-    z-index: var(--z-header);
-    transition: all var(--transition-base);
+    /* Fondo morado MUY transparente - sin blur */
+    background: rgba(75, 0, 130, 0.1); /* Transparente pero con tono morado */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: var(--z-header, 1000);
+    transition: all 0.3s ease;
+    /* Eliminamos la clase .scrolled para mantener siempre el mismo color */
 }
 
-.header.scrolled {
-    box-shadow: var(--shadow-md);
-}
+/* ELIMINADO: .header.scrolled - No queremos cambio al hacer scroll */
 
+/* Contenedor de navegación */
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: 1rem 2rem;
     min-height: 70px;
 }
 
-.nav__logo h1 {
-    font-size: var(--font-size-2xl);
-    color: var(--primary-color);
-    margin: 0;
-    font-weight: 800;
-    letter-spacing: -1px;
+/* ========================================
+   LOGO (Alineado a la izquierda)
+   ======================================== */
+.nav__logo {
+    display: flex;
+    align-items: center;
+    text-align: left;
 }
 
+.nav__logo-img {
+    height: 50px;
+    min-height: 15px;
+}
+
+/* Logo como texto si no hay imagen */
+.nav__logo-text {
+    font-family: 'Alegreya', serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   MENÚ DE NAVEGACIÓN
+   Elementos con fondo morado más visible
+   ======================================== */
 .nav__menu {
     display: flex;
     list-style: none;
-    gap: var(--spacing-lg);
+    gap: 2.5rem;
     align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__item {
+    position: relative;
 }
 
 .nav__link {
-    color: var(--text-dark);
-    font-weight: 500;
-    font-size: var(--font-size-base);
+    color: white;
+    font-weight: 600; /* Más peso para mejor visibilidad */
+    font-size: 1rem;
+    letter-spacing: 0.5px;
     position: relative;
     padding: 0.5rem 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    /* Añadimos sombra de texto para mejor contraste */
+    text-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(75, 0, 130, 0.5); /* Sombra morada para brillo */
 }
 
+/* Fondo morado visible en hover y active */
+.nav__link:hover,
+.nav__link.active {
+    color: #FFD700; /* Amarillo al interactuar */
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.7),
+        0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+/* Línea animada debajo del link - ahora en morado visible */
 .nav__link::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
     left: 0;
     width: 0;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: width var(--transition-base);
+    height: 3px; /* Un poco más gruesa */
+    background: #8A2BE2; /* Morado más brillante y visible */
+    transition: width 0.3s ease;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5); /* Brillo morado */
 }
 
 .nav__link:hover::after,
@@ -65,77 +111,149 @@
     width: 100%;
 }
 
-.nav__link:hover {
-    color: var(--primary-color);
+/* ========================================
+   EFECTO DE FONDO PARA ITEMS AL HOVER
+   ======================================== */
+.nav__link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: rgba(138, 43, 226, 0.2); /* Morado suave */
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    z-index: -1;
 }
 
-/* Botón de menú móvil */
+.nav__link:hover::before {
+    width: calc(100% + 16px);
+    height: calc(100% + 8px);
+}
+
+/* ========================================
+   BOTÓN HAMBURGUESA (Mobile) - Más visible
+   ======================================== */
 .nav__toggle {
     display: none;
     flex-direction: column;
     gap: 5px;
-    background: none;
-    border: none;
+    background: rgba(138, 43, 226, 0.3); /* Fondo morado suave */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
     cursor: pointer;
     padding: 0.5rem;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.nav__toggle:hover {
+    background: rgba(138, 43, 226, 0.5);
 }
 
 .nav__toggle span {
     width: 25px;
     height: 3px;
-    background-color: var(--text-dark);
-    border-radius: var(--radius-full);
-    transition: all var(--transition-base);
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
 }
 
-/* Mobile Styles */
+/* Animación del botón hamburguesa */
+.nav__toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.nav__toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav__toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ===================================
+   RESPONSIVE - Tablets y Móviles
+   =================================== */
+
 @media (max-width: 768px) {
+    /* Mostrar botón hamburguesa en móvil */
     .nav__toggle {
         display: flex;
     }
     
+    /* Menú vertical deslizante - fondo morado más sólido */
     .nav__menu {
         position: fixed;
         top: 70px;
         right: -100%;
-        width: 80%;
+        width: 75%;
         max-width: 300px;
         height: calc(100vh - 70px);
-        background-color: var(--bg-white);
+        background: rgba(75, 0, 130, 0.95); /* Más opaco en móvil */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         flex-direction: column;
-        padding: var(--spacing-lg);
-        box-shadow: var(--shadow-xl);
-        transition: right var(--transition-base);
-        gap: var(--spacing-md);
+        padding: 2rem 0;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+        transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        gap: 0;
         align-items: flex-start;
+        overflow-y: auto;
     }
     
+    /* Menú activo - desliza hacia dentro */
     .nav__menu.active {
         right: 0;
     }
     
-    .nav__link {
+    .nav__item {
         width: 100%;
-        padding: var(--spacing-sm) 0;
-        font-size: var(--font-size-lg);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
-    /* Animación del botón hamburguesa */
-    .nav__toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(7px, 7px);
+    .nav__link {
+        display: block;
+        width: 100%;
+        padding: 1.2rem 2rem;
+        font-size: 1.1rem;
     }
     
-    .nav__toggle.active span:nth-child(2) {
-        opacity: 0;
+    /* Línea animada solo en desktop */
+    .nav__link::after {
+        display: none;
     }
     
-    .nav__toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
+    /* Fondo morado para items activos en móvil */
+    .nav__link.active {
+        background: rgba(138, 43, 226, 0.3);
+        border-left: 4px solid #FFD700;
     }
 }
 
-@media (min-width: 769px) {
+@media (max-width: 480px) {
     .nav {
-        padding: var(--spacing-md) var(--spacing-lg);
+        padding: 0.8rem 1rem;
+    }
+    
+    .nav__logo-img {
+        height: 40px;
+    }
+    
+    .nav__menu {
+        width: 85%;
+    }
+}
+
+/* Tablets (ajustes intermedios) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav__menu {
+        gap: 1.8rem;
+    }
+    
+    .nav__link {
+        font-size: 0.9rem;
     }
 }
