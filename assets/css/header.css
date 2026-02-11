@@ -1,63 +1,126 @@
 /* ===================================
-   HEADER Y NAVEGACIÓN
+   HEADER Y NAVEGACIÓN MINIMALISTA
+   Navbar transparente con diseño profesional
    =================================== */
 
-   .header {
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-sm);
-    z-index: var(--z-header);
-    transition: all var(--transition-base);
+    /* Navbar completamente transparente con ligero tinte */
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: var(--z-header, 1000);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Estado con scroll - se vuelve más visible */
 .header.scrolled {
-    box-shadow: var(--shadow-md);
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Contenedor de navegación */
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-sm) var(--spacing-md);
-    min-height: 70px;
+    padding: 1.2rem 2rem;
+    min-height: 75px;
 }
 
-.nav__logo h1 {
-    font-size: var(--font-size-2xl);
-    color: var(--primary-color);
-    margin: 0;
-    font-weight: 800;
-    letter-spacing: -1px;
+/* ========================================
+   LOGO (Alineado a la izquierda)
+   ======================================== */
+.nav__logo {
+    display: flex;
+    align-items: center;
+    text-align: left;
 }
 
+.nav__logo-img {
+    height: 55px;
+    min-height: 40px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.nav__logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Logo como texto si no hay imagen */
+.nav__logo-text {
+    font-family: 'Alegreya', serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: #FFFFFF;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   MENÚ DE NAVEGACIÓN MINIMALISTA
+   Letras blancas, limpias y profesionales
+   ======================================== */
 .nav__menu {
     display: flex;
     list-style: none;
-    gap: var(--spacing-lg);
+    gap: 3rem;
     align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__item {
+    position: relative;
 }
 
 .nav__link {
-    color: var(--text-dark);
+    color: #FFFFFF;
+    font-family: 'Alegreya', serif;
     font-weight: 500;
-    font-size: var(--font-size-base);
+    font-size: 1.05rem;
+    letter-spacing: 0.8px;
     position: relative;
-    padding: 0.5rem 0;
+    padding: 0.6rem 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Sombra sutil para mejor legibilidad */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+/* Efecto hover minimalista */
+.nav__link:hover {
+    color: #FFD700; /* Amarillo dorado para hover */
+    text-shadow: 
+        0 0 8px rgba(255, 215, 0, 0.5),
+        0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.nav__link.active {
+    color: #FFD700;
+    font-weight: 600;
+}
+
+/* Línea animada debajo del link - minimalista */
 .nav__link::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: var(--primary-color);
-    transition: width var(--transition-base);
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
 }
 
 .nav__link:hover::after,
@@ -65,77 +128,152 @@
     width: 100%;
 }
 
-.nav__link:hover {
-    color: var(--primary-color);
-}
-
-/* Botón de menú móvil */
+/* ========================================
+   BOTÓN HAMBURGUESA (Mobile)
+   ======================================== */
 .nav__toggle {
     display: none;
     flex-direction: column;
-    gap: 5px;
-    background: none;
+    gap: 6px;
+    background: transparent;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    z-index: 1001;
+    transition: all 0.3s ease;
 }
 
 .nav__toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-dark);
-    border-radius: var(--radius-full);
-    transition: all var(--transition-base);
+    width: 28px;
+    height: 2.5px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Mobile Styles */
+/* Animación del botón hamburguesa */
+.nav__toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.nav__toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.nav__toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* ===================================
+   RESPONSIVE - Tablets y Móviles
+   =================================== */
+
 @media (max-width: 768px) {
     .nav__toggle {
         display: flex;
     }
     
+    /* Menú vertical deslizante */
     .nav__menu {
         position: fixed;
-        top: 70px;
+        top: 75px;
         right: -100%;
-        width: 80%;
-        max-width: 300px;
-        height: calc(100vh - 70px);
-        background-color: var(--bg-white);
+        width: 75%;
+        max-width: 320px;
+        height: calc(100vh - 75px);
+        background: linear-gradient(135deg, rgba(75, 0, 130, 0.98), rgba(0, 139, 139, 0.98));
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
         flex-direction: column;
-        padding: var(--spacing-lg);
-        box-shadow: var(--shadow-xl);
-        transition: right var(--transition-base);
-        gap: var(--spacing-md);
+        padding: 3rem 0;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+        transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        gap: 0;
         align-items: flex-start;
+        overflow-y: auto;
     }
     
+    /* Menú activo */
     .nav__menu.active {
         right: 0;
     }
     
-    .nav__link {
+    .nav__item {
         width: 100%;
-        padding: var(--spacing-sm) 0;
-        font-size: var(--font-size-lg);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
     
-    /* Animación del botón hamburguesa */
-    .nav__toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(7px, 7px);
+    .nav__link {
+        display: block;
+        width: 100%;
+        padding: 1.5rem 2.5rem;
+        font-size: 1.15rem;
+        text-shadow: none;
     }
     
-    .nav__toggle.active span:nth-child(2) {
-        opacity: 0;
+    .nav__link::after {
+        display: none;
     }
     
-    .nav__toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
+    .nav__link.active {
+        background: rgba(255, 215, 0, 0.15);
+        border-left: 4px solid #FFD700;
+    }
+    
+    .nav__link:hover {
+        background: rgba(255, 255, 255, 0.05);
     }
 }
 
-@media (min-width: 769px) {
+@media (max-width: 480px) {
     .nav {
-        padding: var(--spacing-md) var(--spacing-lg);
+        padding: 1rem 1.2rem;
+        min-height: 65px;
+    }
+    
+    .nav__logo-img {
+        height: 45px;
+    }
+    
+    .nav__logo-text {
+        font-size: 1.6rem;
+    }
+    
+    .nav__menu {
+        width: 85%;
+        top: 65px;
+        height: calc(100vh - 65px);
+    }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav__menu {
+        gap: 2.2rem;
+    }
+    
+    .nav__link {
+        font-size: 1rem;
+    }
+}
+
+/* Efecto de desenfoque para el contenido cuando el menú está abierto */
+@media (max-width: 768px) {
+    body.menu-open {
+        overflow: hidden;
+    }
+    
+    body.menu-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        animation: fadeIn 0.3s ease;
     }
 }

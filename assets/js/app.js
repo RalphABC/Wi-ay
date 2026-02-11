@@ -71,33 +71,7 @@ class App {
         }
     }
 
-    // Efectos al hacer scroll
-    setupScrollEffects() {
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-
-            // Header con sombra al hacer scroll
-            if (currentScroll > 50) {
-                this.header.classList.add('scrolled');
-            } else {
-                this.header.classList.remove('scrolled');
-            }
-
-            // Ocultar/mostrar header al hacer scroll (opcional)
-            // if (currentScroll > lastScroll && currentScroll > 100) {
-            //     this.header.style.transform = 'translateY(-100%)';
-            // } else {
-            //     this.header.style.transform = 'translateY(0)';
-            // }
-
-            lastScroll = currentScroll;
-        });
-
-        // Botón de scroll to top (opcional)
-        this.createScrollTopButton();
-    }
+  
 
     // Crear botón de scroll to top
     createScrollTopButton() {

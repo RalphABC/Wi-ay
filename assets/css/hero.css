@@ -1,17 +1,31 @@
 /* ===================================
-   SECCIÓN HERO
+   SECCIÓN HERO - Diseño Minimalista
+   Gradiente de oscuro (abajo) a claro (arriba)
+   Layout: 60% texto (izquierda) + 40% espacio
    =================================== */
 
-   .hero {
+.hero {
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    position: relative;
+    justify-content: flex-start;
     overflow: hidden;
-    margin-top: 70px;
+    
+    /* ========================================
+       IMAGEN DE FONDO
+       ======================================== */
+    background-image: url('../images/inicio.jpg');
+    background-size: cover;
+    background-position: center 37%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
+/* ========================================
+   GRADIENTE DE OSCURO (ABAJO) A CLARO (ARRIBA)
+   Color morado profundo con difusión hacia arriba
+   ======================================== */
 .hero::before {
     content: '';
     position: absolute;
@@ -19,96 +33,351 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
-    opacity: 0.3;
-}
-
-.hero__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
-    align-items: center;
-    position: relative;
+    /* Gradiente: Más oscuro abajo, más claro arriba para fusión con navbar */
+    background: linear-gradient(
+        to top,
+        rgba(75, 0, 130, 0.85) 0%,      /* Morado oscuro abajo */
+        rgba(75, 0, 130, 0.65) 30%,     /* Medio oscuro */
+        rgba(75, 0, 130, 0.35) 70%,     /* Medio claro */
+        rgba(75, 0, 130, 0.15) 90%,     /* Muy claro arriba */
+        rgba(75, 0, 130, 0.05) 100%     /* Casi transparente en el top */
+    );
     z-index: 1;
 }
 
+/* Textura sutil (opcional) */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1.5" fill="white" opacity="0.08"/></svg>');
+    opacity: 0.3;
+    z-index: 1;
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+   Layout en 2 columnas: 60% texto + 40% vacío
+   ======================================== */
+.hero__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* 60% - 40% */
+    gap: 4rem;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ========================================
+   CONTENIDO DE TEXTO - Alineado a la izquierda
+   ======================================== */
 .hero__content {
-    color: white;
-    animation: fadeInUp 1s ease-out;
+    color: #FFFFFF;
+    text-align: left;
+    padding-right: 2rem;
+    animation: fadeInLeft 1s ease-out;
 }
 
+/* ========================================
+   TÍTULO: "Proyecto Wiñay"
+   Fuente Alegreya para impacto
+   "Wiñay" en amarillo dorado
+   ======================================== */
 .hero__title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    margin-bottom: var(--spacing-md);
-    color: white;
-    line-height: 1.1;
+    font-family: 'Alegreya', serif;
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    font-weight: 900;
+    margin-bottom: 2rem;
+    color: #FFFFFF;
+    line-height: 1.15;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+    letter-spacing: -0.5px;
 }
 
+/* "Wiñay" en AMARILLO DORADO */
+.hero__highlight {
+    color: #FFD700;
+    display: block;
+    text-shadow: 
+        0 0 25px rgba(255, 215, 0, 0.6),
+        0 0 50px rgba(255, 215, 0, 0.4),
+        0 3px 15px rgba(0, 0, 0, 0.5);
+    animation: gentleGlow 4s ease-in-out infinite alternate;
+}
+
+/* ========================================
+   SUBTÍTULO (H3) - Descripción del proyecto
+   Fuente Alegreya para párrafos
+   Texto justificado en bloque
+   ======================================== */
 .hero__subtitle {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--spacing-lg);
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
+    font-family: 'Alegreya', serif;
+    font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+    font-weight: 400;
+    margin-bottom: 3rem;
+    color: #FFFFFF;
+    line-height: 1.75;
+    text-align: justify;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    max-width: 100%;
 }
 
+/* ========================================
+   BOTÓN "EXPLORAR PROYECTO"
+   Amarillo dorado con texto morado
+   ======================================== */
 .hero__buttons {
     display: flex;
-    gap: var(--spacing-md);
+    gap: 1.2rem;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    margin-top: 2.5rem;
 }
 
-.hero__buttons .btn {
-    padding: 1rem 2rem;
-    font-size: var(--font-size-lg);
-}
-
-.hero__buttons .btn--primary {
-    background-color: white;
-    color: var(--primary-color);
-}
-
-.hero__buttons .btn--primary:hover {
-    background-color: var(--bg-light);
-    transform: translateY(-3px);
-}
-
-.hero__buttons .btn--secondary {
-    border-color: white;
-    color: white;
-}
-
-.hero__buttons .btn--secondary:hover {
-    background-color: white;
-    color: var(--primary-color);
-}
-
-.hero__image {
-    animation: fadeIn 1.2s ease-out;
+.btn--hero {
+    display: inline-block;
+    padding: 1.1rem 3rem;
+    background: #FFD700;
+    color: #4B0082;
+    font-family: 'Alegreya', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 6px 20px rgba(255, 215, 0, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.3);
     position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.hero__image img {
-    width: 100%;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-xl);
-    animation: float 6s ease-in-out infinite;
+.btn--hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn--hero:hover {
+    background: #FFC700;
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 30px rgba(255, 215, 0, 0.6),
+        0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn--hero:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+.btn--hero:active {
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   COLUMNA DERECHA (Espacio vacío/decorativo)
+   Se puede usar para elementos visuales opcionales
+   ======================================== */
+.hero__visual {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Elemento decorativo opcional (círculo con gradiente) */
+.hero__visual::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(
+        circle,
+        rgba(255, 215, 0, 0.08) 0%,
+        rgba(0, 139, 139, 0.05) 50%,
+        transparent 100%
+    );
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+}
+
+/* ========================================
+   INDICADOR DE SCROLL
+   ======================================== */
+.hero__scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2.5s ease-in-out infinite;
+}
+
+.hero__mouse {
+    width: 26px;
+    height: 42px;
+    border: 2px solid rgba(255, 215, 0, 0.8);
+    border-radius: 16px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.hero__mouse::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 10px;
+    background: #FFD700;
+    border-radius: 3px;
+    animation: scroll 2s ease-in-out infinite;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* ===================================
+   ANIMACIONES
+   =================================== */
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes gentleGlow {
+    from {
+        text-shadow: 
+            0 0 25px rgba(255, 215, 0, 0.6),
+            0 0 50px rgba(255, 215, 0, 0.4),
+            0 3px 15px rgba(0, 0, 0, 0.5);
+    }
+    to {
+        text-shadow: 
+            0 0 35px rgba(255, 215, 0, 0.8),
+            0 0 70px rgba(255, 215, 0, 0.5),
+            0 3px 15px rgba(0, 0, 0, 0.5);
+    }
 }
 
 @keyframes float {
     0%, 100% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0deg);
     }
-    50% {
-        transform: translateY(-20px);
+    25% {
+        transform: translateY(-20px) rotate(2deg);
+    }
+    75% {
+        transform: translateY(-30px) rotate(-2deg);
     }
 }
 
-/* Responsive */
-@media (max-width: 968px) {
+@keyframes bounce {
+    0%, 100% { 
+        transform: translateX(-50%) translateY(0); 
+    }
+    50% { 
+        transform: translateX(-50%) translateY(-15px); 
+    }
+}
+
+@keyframes scroll {
+    0% { 
+        opacity: 1; 
+        transform: translateX(-50%) translateY(0); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: translateX(-50%) translateY(20px); 
+    }
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+
+@media (max-width: 1200px) {
     .hero__container {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        padding: 0 2.5rem;
+        gap: 0;
+    }
+    
+    .hero__content {
+        padding-right: 0;
+        max-width: 800px;
+    }
+    
+    .hero__visual {
+        display: none;
+    }
+}
+
+@media (max-width: 968px) {
+    .hero {
+        background-attachment: scroll; /* Mejor rendimiento en móviles */
+        background-position: center 42%; /* Más abajo en tablets */
+    }
+    
+    .hero__container {
+        padding: 0 2rem;
+    }
+    
+    .hero__title {
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero__subtitle {
+        font-size: clamp(1.05rem, 2.5vw, 1.4rem);
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 95vh;
+        background-position: center 45%; /* Aún más abajo en móviles */
+        background-attachment: scroll;
+    }
+    
+    .hero__container {
+        padding: 0 1.5rem;
+        justify-content: center;
+    }
+    
+    .hero__content {
+        text-align: center;
+    }
+    
+    .hero__subtitle {
         text-align: center;
     }
     
@@ -116,22 +385,68 @@
         justify-content: center;
     }
     
-    .hero__image {
-        order: -1;
+    .btn--hero {
+        padding: 1rem 2.5rem;
+        font-size: 1.15rem;
+    }
+    
+    .hero__scroll-indicator {
+        bottom: 30px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .hero {
-        min-height: auto;
-        padding: var(--spacing-xl) 0;
+        min-height: 90vh;
+        background-position: center 48%; /* Máximo ajuste para pantallas muy pequeñas */
+        background-attachment: scroll;
+    }
+    
+    .hero__container {
+        padding: 0 1.2rem;
     }
     
     .hero__title {
-        font-size: var(--font-size-3xl);
+        margin-bottom: 1.2rem;
     }
     
     .hero__subtitle {
-        font-size: var(--font-size-lg);
+        font-size: 1.05rem;
+        line-height: 1.65;
+        margin-bottom: 2rem;
+    }
+    
+    .btn--hero {
+        padding: 0.9rem 2rem;
+        font-size: 1.05rem;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Móviles muy pequeños (375px) */
+@media (max-width: 375px) {
+    .hero {
+        background-position: center 52%; /* Extra ajuste para iPhone SE y similares */
+    }
+}
+
+/* Modo landscape en móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: 140vh;
+        background-position: center 35%; /* Menos desplazamiento en landscape */
+    }
+    
+    .hero__scroll-indicator {
+        display: none;
+    }
+}
+/* ========================================
+   DISPOSITIVOS CON RESOLUCIONES MUY ALTAS
+   ======================================== */
+@media (min-width: 1920px) {
+    .hero {
+        background-position: center 35%; /* Ajuste para pantallas grandes */
     }
 }
