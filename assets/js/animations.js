@@ -27,12 +27,15 @@ window.addEventListener('scroll', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
+    const body = document.body;
 
     if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
+        navToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
             // Alternar clase "active" para mostrar/ocultar menú
             navToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
         });
     }
 
@@ -48,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (navToggle && navMenu) {
                 navToggle.classList.remove('active');
                 navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
             }
             
             // Actualizar link activo
@@ -66,6 +70,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isClickInsideNav && navMenu?.classList.contains('active')) {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+    });
+
+    /* ========================================
+       CERRAR MENÚ con tecla ESC
+       ======================================== */
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && navMenu?.classList.contains('active')) {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            body.classList.remove('menu-open');
         }
     });
 });
@@ -83,8 +99,8 @@ class Animations {
         this.setupScrollAnimations();
         this.setupParallax();
         this.setupCounters();
-        this.setupSmoothScroll(); // Activar scroll suave
-        this.setupActiveNavigation(); // Activar navegación activa
+        this.setupSmoothScroll();
+        this.setupActiveNavigation();
     }
 
     /* ========================================
@@ -121,7 +137,7 @@ class Animations {
     }
 
     /* ========================================
-       EFECTO PARALLAX para HERO - MEJORADO
+       EFECTO PARALLAX para HERO - OPTIMIZADO
        Crea efecto de profundidad al hacer scroll
        con optimización de rendimiento
        ======================================== */
@@ -129,7 +145,7 @@ class Animations {
         const hero = document.querySelector('.hero');
         
         if (hero) {
-            let ticking = false; // Optimización de rendimiento
+            let ticking = false;
             
             window.addEventListener('scroll', () => {
                 if (!ticking) {
@@ -138,13 +154,12 @@ class Animations {
                         
                         // Solo aplicar parallax si estamos en la sección hero
                         if (scrolled < window.innerHeight) {
-                            // Efecto parallax sutil en el contenido
                             const heroContent = hero.querySelector('.hero__content');
                             if (heroContent) {
                                 // El contenido se mueve más lento que el scroll
-                                heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                                heroContent.style.transform = `translateY(${scrolled * 0.25}px)`;
                                 // Se desvanece gradualmente
-                                heroContent.style.opacity = `${1 - (scrolled / window.innerHeight)}`;
+                                heroContent.style.opacity = `${1 - (scrolled / (window.innerHeight * 1.2))}`;
                             }
                         }
                         
@@ -163,7 +178,7 @@ class Animations {
        ======================================== */
     setupCounters() {
         const counters = document.querySelectorAll('.stat__number');
-        const speed = 200; // Velocidad de animación
+        const speed = 200;
 
         const animateCounter = (counter) => {
             const target = counter.textContent.replace(/\+/g, '');
@@ -218,7 +233,7 @@ class Animations {
                 const target = document.querySelector(href);
                 
                 if (target) {
-                    const headerHeight = document.querySelector('.header')?.offsetHeight || 70;
+                    const headerHeight = document.querySelector('.header')?.offsetHeight || 75;
                     const targetPosition = target.offsetTop - headerHeight;
                     
                     window.scrollTo({
@@ -238,26 +253,27 @@ class Animations {
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav__link');
 
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const scrollPosition = window.pageYOffset + 150; // Offset ajustado
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '-100px 0px -66%'
+        };
 
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
                 }
             });
+        }, observerOptions);
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
+        sections.forEach(section => observer.observe(section));
     }
 
     /* ========================================
