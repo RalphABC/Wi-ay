@@ -1,0 +1,138 @@
+/* ========================================
+   SECCIÓN OBJETIVOS
+   ======================================== */
+
+.objectives {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.objectives__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+/* Objetivo General */
+.objectives__general {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.objectives__icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.objectives__general h3 {
+    font-size: 1.8rem;
+    color: #6b21a8;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.objectives__general p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Objetivos Específicos */
+.objectives__specific {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.objectives__specific h3 {
+    font-size: 1.8rem;
+    color: #6b21a8;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.objectives__list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.objective__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 10px;
+    border-left: 4px solid #6b21a8;
+    transition: all 0.3s ease;
+}
+
+.objective__item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(107, 33, 168, 0.15);
+}
+
+.objective__number {
+    min-width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #6b21a8, #9333ea);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.objective__item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin: 0;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .objectives__content {
+        grid-template-columns: 1fr 1.5fr;
+    }
+    
+    .objectives__general {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 767px) {
+    .objectives {
+        padding: 4rem 0;
+    }
+    
+    .objectives__general,
+    .objectives__specific {
+        padding: 2rem;
+    }
+    
+    .objectives__general h3,
+    .objectives__specific h3 {
+        font-size: 1.5rem;
+    }
+    
+    .objective__item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .objective__number {
+        margin: 0 auto;
+    }
+}

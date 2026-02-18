@@ -1,63 +1,100 @@
 /* ===================================
    VARIABLES GLOBALES Y ESTILOS BASE
-   Proyecto WIÑAY - Paleta Profesional
+   Proyecto WIÑAY - Tema Azul Celeste
    =================================== */
 
 :root {
     /* ===================================
        PALETA DE COLORES PRINCIPAL
+       Azul Celeste y Blanco
        =================================== */
     
-    /* Colores Primarios (Marca/Proyecto) */
-    --primary-color: #4B0082;        /* Morado profundo - Autismo/Profesionalismo */
-    --primary-light: #6A1B9A;        /* Morado claro */
-    --primary-dark: #2E0854;         /* Morado oscuro */
+    /* COLOR PRIMARIO - Azul Profundo */
+    --primary-color: #0EA5E9;        /* Azul celeste brillante */
+    --primary-light: #38BDF8;        /* Azul cielo claro */
+    --primary-dark: #0284C7;         /* Azul profundo */
+    --primary-darker: #0C4A6E;       /* Azul muy oscuro */
     
-    --secondary-color: #008B8B;      /* Verde azulado - Salud/Investigación */
-    --secondary-light: #20B2AA;      /* Verde azulado claro */
-    --secondary-dark: #006666;       /* Verde azulado oscuro */
+    /* COLOR SECUNDARIO - Azul Marino */
+    --secondary-color: #1E40AF;      /* Azul marino */
+    --secondary-light: #3B82F6;      /* Azul royal */
+    --secondary-dark: #1E3A8A;       /* Azul oscuro */
     
-    /* Colores Secundarios (UX/Acentos) */
-    --accent-primary: #FFD700;       /* Amarillo dorado - CTAs/Destacados */
-    --accent-secondary: #FFA500;     /* Naranja dorado - Variante */
+    /* COLOR DE ACENTO - Dorado/Coral suave */
+    --accent-primary: #F59E0B;       /* Ámbar dorado */
+    --accent-secondary: #D97706;     /* Dorado oscuro */
+    --accent-light: #FCD34D;         /* Amarillo suave */
     
-    --neutral-gray: #7A8B99;         /* Gris azulado - Textos secundarios */
-    --neutral-light: #E8EAED;        /* Gris muy claro */
-    --neutral-dark: #2C3E50;         /* Gris oscuro */
+    /* COLORES SIDEBAR ESPECÍFICOS */
+    --sidebar-bg: #0284C7;           /* Fondo sidebar */
+    --sidebar-bg-hover: #0EA5E9;     /* Hover items */
+    --sidebar-text: #FFFFFF;         /* Texto sidebar */
+    --sidebar-width: 280px;          /* Ancho sidebar */
+    --sidebar-width-mobile: 300px;   /* Ancho móvil */
     
-    /* Colores de Texto */
-    --text-primary: #FFFFFF;         /* Blanco - Texto principal sobre fondos oscuros */
-    --text-dark: #1f2937;           /* Oscuro - Texto sobre fondos claros */
-    --text-light: #7A8B99;          /* Gris azulado - Textos secundarios */
-    --text-muted: #9CA3AF;          /* Gris claro - Textos terciarios */
+    /* GRISES NEUTRALES */
+    --neutral-50: #F0F9FF;           /* Azul muy claro */
+    --neutral-100: #E0F2FE;          /* Azul cielo pálido */
+    --neutral-200: #BAE6FD;          /* Azul claro */
+    --neutral-300: #7DD3FC;          /* Azul pastel */
+    --neutral-400: #38BDF8;          /* Azul cielo */
+    --neutral-500: #0EA5E9;          /* Azul celeste */
+    --neutral-600: #0284C7;          /* Azul medio */
+    --neutral-700: #0369A1;          /* Azul profundo */
+    --neutral-800: #075985;          /* Azul oscuro */
+    --neutral-900: #0C4A6E;          /* Azul muy oscuro */
     
-    /* Fondos */
+    /* COLORES DE TEXTO */
+    --text-primary: #FFFFFF;
+    --text-dark: #0C4A6E;
+    --text-light: #475569;
+    --text-muted: #64748B;
+    
+    /* FONDOS */
     --bg-white: #FFFFFF;
-    --bg-light: #F8F9FA;
-    --bg-dark: #1A1A2E;
-    --bg-gradient-primary: linear-gradient(135deg, #4B0082, #008B8B);
-    --bg-gradient-accent: linear-gradient(90deg, #FFD700, #FFA500);
+    --bg-light: #F0F9FF;
+    --bg-dark: #0C4A6E;
+    --bg-gradient-primary: linear-gradient(135deg, #0EA5E9, #0284C7);
+    --bg-gradient-secondary: linear-gradient(135deg, #38BDF8, #1E40AF);
+    --bg-gradient-accent: linear-gradient(90deg, #F59E0B, #D97706);
     
-    /* Bordes */
-    --border-color: #E5E7EB;
-    --border-light: rgba(255, 255, 255, 0.1);
-    --border-dark: rgba(0, 0, 0, 0.1);
+    /* BORDES */
+    --border-color: var(--neutral-300);
+    --border-light: rgba(255, 255, 255, 0.2);
+    --border-dark: rgba(14, 165, 233, 0.2);
     
-    /* ===================================
-       TIPOGRAFÍA
-       =================================== */
+    /* SOMBRAS */
+    --shadow-sm: 0 4px 8px rgba(2, 132, 199, 0.08);
+    --shadow-md: 0 8px 16px rgba(2, 132, 199, 0.12);
+    --shadow-lg: 0 12px 24px rgba(2, 132, 199, 0.15);
+    --shadow-xl: 0 20px 32px rgba(2, 132, 199, 0.18);
+    --shadow-2xl: 0 24px 48px rgba(2, 132, 199, 0.20);
+    
+    /* Sombras de colores */
+    --shadow-primary: 0 10px 30px rgba(14, 165, 233, 0.25);
+    --shadow-secondary: 0 10px 30px rgba(30, 64, 175, 0.20);
+    --shadow-accent: 0 8px 25px rgba(245, 158, 11, 0.25);
+    
+    /* RADIOS */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.625rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+    
+    /* TIPOGRAFÍA */
     --font-primary: 'Alegreya', serif;
     --font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     
     --font-size-base: 16px;
-    --font-size-sm: 0.875rem;      /* 14px */
-    --font-size-md: 1rem;          /* 16px */
-    --font-size-lg: 1.125rem;      /* 18px */
-    --font-size-xl: 1.25rem;       /* 20px */
-    --font-size-2xl: 1.5rem;       /* 24px */
-    --font-size-3xl: 2rem;         /* 32px */
-    --font-size-4xl: 2.5rem;       /* 40px */
-    --font-size-5xl: 3rem;         /* 48px */
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+    --font-size-5xl: 3rem;
     
     --font-weight-normal: 400;
     --font-weight-medium: 500;
@@ -65,56 +102,29 @@
     --font-weight-bold: 700;
     --font-weight-black: 900;
     
-    /* ===================================
-       ESPACIADO
-       =================================== */
-    --spacing-xs: 0.5rem;    /* 8px */
-    --spacing-sm: 1rem;      /* 16px */
-    --spacing-md: 1.5rem;    /* 24px */
-    --spacing-lg: 2rem;      /* 32px */
-    --spacing-xl: 3rem;      /* 48px */
-    --spacing-2xl: 4rem;     /* 64px */
-    --spacing-3xl: 6rem;     /* 96px */
+    /* ESPACIADO */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    --spacing-3xl: 6rem;
     
-    /* ===================================
-       SOMBRAS
-       =================================== */
-    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
-    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
-    
-    /* Sombras de colores */
-    --shadow-primary: 0 10px 30px rgba(75, 0, 130, 0.3);
-    --shadow-secondary: 0 10px 30px rgba(0, 139, 139, 0.3);
-    --shadow-accent: 0 6px 20px rgba(255, 215, 0, 0.4);
-    
-    /* ===================================
-       BORDES Y RADIOS
-       =================================== */
-    --radius-sm: 0.375rem;   /* 6px */
-    --radius-md: 0.5rem;     /* 8px */
-    --radius-lg: 1rem;       /* 16px */
-    --radius-xl: 1.5rem;     /* 24px */
-    --radius-full: 9999px;   /* Círculo completo */
-    
-    /* ===================================
-       TRANSICIONES
-       =================================== */
-    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* TRANSICIONES */
+    --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 350ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
     
-    /* ===================================
-       Z-INDEX
-       =================================== */
+    /* Z-INDEX */
     --z-base: 1;
     --z-dropdown: 50;
     --z-sticky: 100;
     --z-header: 1000;
-    --z-modal: 1100;
-    --z-tooltip: 1200;
+    --z-sidebar: 1100;
+    --z-overlay: 1050;
+    --z-modal: 1200;
+    --z-tooltip: 1300;
 }
 
 /* ===================================
@@ -267,7 +277,7 @@ section {
     transform: translateX(-50%);
     width: 100px;
     height: 4px;
-    background: var(--bg-gradient-accent);
+    background: var(--bg-gradient-primary);
     border-radius: var(--radius-full);
 }
 
@@ -325,7 +335,7 @@ section {
 
 .btn--accent {
     background: var(--accent-primary);
-    color: var(--primary-color);
+    color: var(--neutral-900);
     box-shadow: var(--shadow-accent);
 }
 
@@ -339,7 +349,6 @@ section {
    UTILIDADES
    =================================== */
 
-/* Texto */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
@@ -350,27 +359,23 @@ section {
 .text-accent { color: var(--accent-primary); }
 .text-muted { color: var(--text-muted); }
 
-/* Márgenes superiores */
 .mt-1 { margin-top: var(--spacing-xs); }
 .mt-2 { margin-top: var(--spacing-sm); }
 .mt-3 { margin-top: var(--spacing-md); }
 .mt-4 { margin-top: var(--spacing-lg); }
 .mt-5 { margin-top: var(--spacing-xl); }
 
-/* Márgenes inferiores */
 .mb-1 { margin-bottom: var(--spacing-xs); }
 .mb-2 { margin-bottom: var(--spacing-sm); }
 .mb-3 { margin-bottom: var(--spacing-md); }
 .mb-4 { margin-bottom: var(--spacing-lg); }
 .mb-5 { margin-bottom: var(--spacing-xl); }
 
-/* Padding */
 .p-1 { padding: var(--spacing-xs); }
 .p-2 { padding: var(--spacing-sm); }
 .p-3 { padding: var(--spacing-md); }
 .p-4 { padding: var(--spacing-lg); }
 
-/* Display */
 .d-none { display: none; }
 .d-block { display: block; }
 .d-flex { display: flex; }
@@ -433,7 +438,6 @@ section {
     }
 }
 
-/* Clases de animación */
 .fade-in { animation: fadeIn 0.6s ease-out; }
 .fade-in-up { animation: fadeInUp 0.8s ease-out; }
 .slide-in-left { animation: slideInLeft 0.6s ease-out; }
@@ -444,7 +448,7 @@ section {
    =================================== */
 
 .loader {
-    border: 4px solid var(--neutral-light);
+    border: 4px solid var(--neutral-200);
     border-top: 4px solid var(--primary-color);
     border-radius: 50%;
     width: 48px;
@@ -518,13 +522,11 @@ section {
    ACCESIBILIDAD
    =================================== */
 
-/* Focus visible para teclado */
 *:focus-visible {
     outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
 }
 
-/* Reducir movimiento para usuarios sensibles */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -533,4 +535,28 @@ section {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* Overlay cuando el sidebar está abierto */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 74, 110, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: var(--z-overlay);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.sidebar-open {
+    overflow: hidden;
 }

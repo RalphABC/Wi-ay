@@ -1,0 +1,26 @@
+{
+  "publications": [
+    {
+      "id": 1,
+      "title": "Gut microbiota alterations and their correlation with neurobehavioral symptoms in Ecuadorian children with Autism Spectrum Disorder",
+      "authors": ["Rodríguez M.E.", "Mendoza C.", "García L.F.", "López A.C."],
+      "journal": "Journal of Autism and Developmental Disorders",
+      "year": 2024,
+      "type": "research",
+      "abstract": "Este estudio examina la composición de la microbiota intestinal en niños ecuatorianos con TEA...",
+      "doi": "10.1007/xxxxx",
+      "url": "#"
+    },
+    {
+      "id": 2,
+      "title": "Nutritional deficiencies and their impact on cognitive development in children with ASD in Ecuador",
+      "authors": ["López A.C.", "Rodríguez M.E.", "Mendoza C."],
+      "journal": "Nutrients",
+      "year": 2024,
+      "type": "research",
+      "abstract": "Análisis de deficiencias nutricionales prevalentes en población pediátrica con TEA...",
+      "doi": "10.3390/xxxxx",
+      "url": "#"
+    }
+  ]
+}

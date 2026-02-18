@@ -1,9 +1,9 @@
 /* ===================================
-   FOOTER
+   FOOTER - PALETA VIVAZ Y ELEGANTE
    =================================== */
 
-   .footer {
-    background-color: var(--text-dark);
+.footer {
+    background-color: var(--neutral-900);
     color: white;
     padding: var(--spacing-2xl) 0 var(--spacing-md);
 }
@@ -19,6 +19,18 @@
     color: white;
     font-size: var(--font-size-xl);
     margin-bottom: var(--spacing-md);
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.footer__section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--accent-primary);
 }
 
 .footer__section p {
@@ -41,7 +53,7 @@
 }
 
 .footer__links a:hover {
-    color: white;
+    color: var(--accent-primary);
     transform: translateX(5px);
 }
 
@@ -53,7 +65,7 @@
 .footer__social a {
     width: 45px;
     height: 45px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -64,12 +76,13 @@
 }
 
 .footer__social a:hover {
-    background-color: var(--primary-color);
+    background-color: var(--accent-primary);
+    color: white;
     transform: translateY(-5px);
 }
 
 .footer__bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: var(--spacing-md);
     text-align: center;
 }
@@ -79,7 +92,6 @@
     font-size: var(--font-size-sm);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .footer__content {
         grid-template-columns: 1fr;
