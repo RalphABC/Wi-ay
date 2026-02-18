@@ -1,8 +1,8 @@
 /* ===================================
-   SECCIÓN EQUIPO
+   SECCIÓN EQUIPO - PALETA VIVAZ Y ELEGANTE
    =================================== */
 
-   .team {
+.team {
     background-color: var(--bg-light);
 }
 
@@ -23,7 +23,7 @@
 
 .team__card:hover {
     transform: translateY(-10px);
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--shadow-primary);
 }
 
 .team__image-wrapper {
@@ -50,7 +50,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to top, rgba(37, 99, 235, 0.9), transparent);
+    background: linear-gradient(to top, rgba(106, 76, 147, 0.95), transparent);
     opacity: 0;
     transition: opacity var(--transition-base);
     display: flex;
@@ -82,7 +82,7 @@
 }
 
 .team__social a:hover {
-    background-color: var(--accent-color);
+    background-color: var(--accent-primary);
     color: white;
     transform: translateY(-3px);
 }
@@ -129,7 +129,6 @@
     font-weight: 600;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .team__grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

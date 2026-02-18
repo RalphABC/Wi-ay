@@ -17,9 +17,12 @@
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/hero.css">
     <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/objectives.css">
     <link rel="stylesheet" href="assets/css/research.css">
+    <link rel="stylesheet" href="assets/css/methodology.css">
     <link rel="stylesheet" href="assets/css/gallery.css">
     <link rel="stylesheet" href="assets/css/team.css">
+    <link rel="stylesheet" href="assets/css/additional-sections.css">
     <link rel="stylesheet" href="assets/css/contact.css">
     <link rel="stylesheet" href="assets/css/footer.css">
 </head>
@@ -27,31 +30,30 @@
     
     <!-- ========================================
          HEADER / NAVEGACIÓN
-         Barra transparente con logo y menú
          ======================================== -->
     <header class="header" id="header">
         <nav class="nav container">
-            <!-- Logo alineado a la izquierda -->
             <div class="">
                 <a href="#inicio">
-                 
-                    <!-- Opción 2: Logo como texto (descomenta si no tienes imagen) -->
+                    <!-- Opción 1: Logo como imagen -->
+                    <!-- <img src="assets/images/logo-wiñay.png" alt="Proyecto WIÑAY" class="nav__logo"> -->
+                    
+                    <!-- Opción 2: Logo como texto -->
                     <!-- <h1>WIÑAY</h1> -->
                 </a>
             </div>
             
-            <!-- Menú de navegación (centro-derecha) -->
             <ul class="nav__menu" id="nav-menu">
                 <li class="nav__item"><a href="#inicio" class="nav__link active">INICIO</a></li>
                 <li class="nav__item"><a href="#sobre-proyecto" class="nav__link">MISIÓN</a></li>
+                <li class="nav__item"><a href="#objetivos" class="nav__link">OBJETIVOS</a></li>
                 <li class="nav__item"><a href="#investigacion" class="nav__link">INVESTIGACIÓN</a></li>
-                <li class="nav__item"><a href="#galeria" class="nav__link">MULTIMEDIA</a></li>
                 <li class="nav__item"><a href="#equipo" class="nav__link">EQUIPO</a></li>
+                <li class="nav__item"><a href="#galeria" class="nav__link">MULTIMEDIA</a></li>
                 <li class="nav__item"><a href="#contacto" class="nav__link">CONTACTO</a></li>
             </ul>
             
-            <!-- Botón hamburguesa para móviles -->
-            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu"></button>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -61,32 +63,58 @@
 
     <!-- ========================================
          SECCIÓN HERO
-         Primera sección con imagen de fondo,
-         overlay morado y contenido principal
          ======================================== -->
     <section class="hero" id="inicio">
-        <!-- Contenedor del contenido principal -->
         <div class="hero__container container">
             <div class="hero__content">
-                <!-- Título principal con "Wiñay" en amarillo -->
                 <h1 class="hero__title">
                     Proyecto <span class="hero__highlight">Wiñay</span>
                 </h1>
                 
-                <!-- Subtítulo descriptivo (H3) -->
                 <h3 class="hero__subtitle">
                     Investigando el vínculo crítico entre la desnutrición, la microbiota intestinal 
                     y los trastornos neuroconductuales en niños con TEA en Ecuador
                 </h3>
                 
-                <!-- Botón de acción principal -->
                 <div class="hero__buttons">
                     <a href="#investigacion" class="btn btn--hero">Explorar proyecto</a>
                 </div>
             </div>
+
+            <div class="hero__slider-container">
+                <div class="hero__slider">
+                    <div class="hero__slider-track" id="slider-track">
+                        <div class="hero__slide">
+                            <img src="assets/images/inicio.jpg" alt="Investigación TEA Ecuador">
+                        </div>
+                        <div class="hero__slide">
+                            <img src="assets/images/inicio2.jpg" alt="Microbiota intestinal">
+                        </div>
+                        <div class="hero__slide">
+                            <img src="assets/images/inicio3.jpg" alt="Nutrición infantil">
+                        </div>
+                        <div class="hero__slide">
+                            <img src="assets/images/inicio4.jpg" alt="Equipo de investigación">
+                        </div>
+                        <div class="hero__slide">
+                            <img src="assets/images/inicio5.jpg" alt="Comunidad Ecuador">
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="hero__slider-arrow prev" aria-label="Imagen anterior">‹</button>
+                <button class="hero__slider-arrow next" aria-label="Imagen siguiente">›</button>
+                
+                <div class="hero__slider-controls">
+                    <button class="hero__slider-dot active" data-slide="0" aria-label="Ir a slide 1"></button>
+                    <button class="hero__slider-dot" data-slide="1" aria-label="Ir a slide 2"></button>
+                    <button class="hero__slider-dot" data-slide="2" aria-label="Ir a slide 3"></button>
+                    <button class="hero__slider-dot" data-slide="3" aria-label="Ir a slide 4"></button>
+                    <button class="hero__slider-dot" data-slide="4" aria-label="Ir a slide 5"></button>
+                </div>
+            </div>
         </div>
         
-        <!-- Indicador de scroll animado -->
         <div class="hero__scroll-indicator">
             <div class="hero__mouse"></div>
         </div>
@@ -100,16 +128,42 @@
             <h2 class="section__title" id="about-title">Sobre el Proyecto</h2>
             <div class="about__content">
                 <div class="about__text">
-                    <p id="about-description">Cargando...</p>
+                    <p id="about-description"> <center>Explorando la relación entre integración sensoriomotora, nutrición y microbiota intestinal en niños con autismo en Ecuador.El Proyecto WIÑAY busca generar evidencia científica en población ecuatoriana sobre la relación entre estado nutricional, microbiota intestinal y desarrollo neuroconductual.
+</center></p>
                     <div class="about__stats" id="about-stats">
                         <!-- Se llenará dinámicamente desde JSON -->
                     </div>
                 </div>
-                <div class="about__media">
-                    <video id="about-video" controls poster="">
-                        <source src="" type="video/mp4">
-                        Tu navegador no soporta el elemento de video.
-                    </video>
+                <div class="about-image-wrapper">
+  <img src="assets/images/primeraimagen.jpg" alt="Proyecto Wiñay" class="about-image">
+  <div class="about-image-overlay">
+    <h3>Proyecto Wiñay</h3>
+    <p>Investigación en autismo Ecuador</p>
+  </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN OBJETIVOS DEL PROYECTO
+         ======================================== -->
+    <section class="objectives" id="objetivos">
+        <div class="container">
+            <h2 class="section__title">Objetivos del Proyecto</h2>
+            
+            <div class="objectives__content">
+                <div class="objectives__general">
+                    <div class="objectives__icon">🎯</div>
+                    <h3>Objetivo General</h3>
+                    <p id="objetivo-general"> <center>Investigar la relación entre las diferencias en la integración sensoriomotora (medidas de forma objetiva con una herramienta digital), los patrones de alimentación, el estado nutricional y la composición de la microbiota intestinal en niños y adolescentes con autismo, en comparación con niños sin autismo en Ecuador.</center></p>
+                </div>
+                
+                <div class="objectives__specific">
+                    <h3>Objetivos Específicos</h3>
+                    <div class="objectives__list" id="objetivos-especificos">
+                        <!-- Se llenará dinámicamente -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,6 +177,60 @@
             <h2 class="section__title">Áreas de Investigación</h2>
             <div class="research__grid" id="research-grid">
                 <!-- Se llenará dinámicamente desde JSON -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN METODOLOGÍA
+         ======================================== -->
+    <section class="methodology" id="metodologia">
+        <div class="container">
+            <h2 class="section__title">Metodología de Investigación</h2>
+            
+            <div class="methodology__overview">
+                <div class="methodology__card">
+                    <h4>Diseño del Estudio</h4>
+                    <p id="method-design">Cargando...</p>
+                </div>
+                <div class="methodology__card">
+                    <h4>Población</h4>
+                    <p id="method-population">Cargando...</p>
+                </div>
+                <div class="methodology__card">
+                    <h4>Muestra</h4>
+                    <p id="method-sample">Cargando...</p>
+                </div>
+                <div class="methodology__card">
+                    <h4>Duración</h4>
+                    <p id="method-duration">Cargando...</p>
+                </div>
+            </div>
+            
+            <div class="methodology__phases">
+                <h3 class="methodology__subtitle">Fases del Proyecto</h3>
+                <div class="phases__timeline" id="phases-timeline">
+                    <!-- Se llenará dinámicamente -->
+                </div>
+            </div>
+            
+            <div class="methodology__locations">
+                <h3 class="methodology__subtitle">Locaciones del Estudio</h3>
+                <div class="locations__grid" id="locations-grid">
+                    <!-- Se llenará dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN PUBLICACIONES
+         ======================================== -->
+    <section class="publications" id="publicaciones">
+        <div class="container">
+            <h2 class="section__title">Publicaciones y Resultados</h2>
+            <div class="publications__list" id="publications-list">
+                <!-- Se llenará dinámicamente -->
             </div>
         </div>
     </section>
@@ -145,7 +253,6 @@
             </div>
         </div>
         
-        <!-- Modal para imágenes -->
         <div class="gallery__modal" id="gallery-modal">
             <span class="gallery__close">&times;</span>
             <img class="gallery__modal-content" id="modal-image">
@@ -161,6 +268,30 @@
             <h2 class="section__title">Nuestro Equipo</h2>
             <div class="team__grid" id="team-grid">
                 <!-- Se llenará dinámicamente desde JSON -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN FAQ
+         ======================================== -->
+    <section class="faq" id="preguntas-frecuentes">
+        <div class="container">
+            <h2 class="section__title">Preguntas Frecuentes</h2>
+            <div class="faq__container" id="faq-container">
+                <!-- Se llenará dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN COLABORADORES
+         ======================================== -->
+    <section class="partners" id="colaboradores">
+        <div class="container">
+            <h2 class="section__title">Instituciones Colaboradoras</h2>
+            <div class="partners__grid" id="partners-grid">
+                <!-- Se llenará dinámicamente -->
             </div>
         </div>
     </section>
@@ -208,9 +339,11 @@
                     <h3>Enlaces Rápidos</h3>
                     <ul class="footer__links">
                         <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#sobre-proyecto">El Proyecto</a></li>
+                        <li><a href="#sobre-proyecto">Misión</a></li>
+                        <li><a href="#objetivos">Objetivos</a></li>
                         <li><a href="#investigacion">Investigación</a></li>
                         <li><a href="#equipo">Equipo</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer__section">
@@ -228,9 +361,9 @@
 
     <!-- ========================================
          Scripts JavaScript
-         Orden: primero utilidades, luego app
          ======================================== -->
     <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/data-loader-extended.js"></script>
     <script src="assets/js/gallery.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/app.js"></script>

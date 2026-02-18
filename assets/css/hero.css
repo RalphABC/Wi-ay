@@ -1,233 +1,296 @@
 /* ===================================
-   SECCIÓN HERO - Diseño Minimalista
-   Gradiente de oscuro (abajo) a claro (arriba)
-   Layout: 60% texto (izquierda) + 40% espacio
+   SECCIÓN HERO - SLIDER DE IMÁGENES
+   Contenedor fijo con texto superpuesto
+   =================================== */
+
+/* ===================================
+   VARIABLES ESPECÍFICOS DEL HERO
+   =================================== */
+:root {
+    --hero-height: 100vh;
+    --hero-min-height: 600px;
+    --slider-border-radius: 20px;
+    --slider-aspect-ratio: 16/10;
+    --overlay-opacity: 0.75;
+}
+
+/* ===================================
+   HERO CONTAINER
    =================================== */
 
 .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: var(--hero-height);
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     overflow: hidden;
-    
-    /* ========================================
-       IMAGEN DE FONDO
-       ======================================== */
-    background-image: url('../images/inicio.jpg');
-    background-size: cover;
-    background-position: center 37%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #BAE6FD 100%);
+    padding-top: var(--header-height);
 }
 
-/* ========================================
-   GRADIENTE DE OSCURO (ABAJO) A CLARO (ARRIBA)
-   Color morado profundo con difusión hacia arriba
-   ======================================== */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* Gradiente: Más oscuro abajo, más claro arriba para fusión con navbar */
-    background: linear-gradient(
-        to top,
-        rgba(75, 0, 130, 0.85) 0%,      /* Morado oscuro abajo */
-        rgba(75, 0, 130, 0.65) 30%,     /* Medio oscuro */
-        rgba(75, 0, 130, 0.35) 70%,     /* Medio claro */
-        rgba(75, 0, 130, 0.15) 90%,     /* Muy claro arriba */
-        rgba(75, 0, 130, 0.05) 100%     /* Casi transparente en el top */
-    );
-    z-index: 1;
-}
+/* ===================================
+   HERO CONTENIDO - Grid de 2 columnas
+   =================================== */
 
-/* Textura sutil (opcional) */
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1.5" fill="white" opacity="0.08"/></svg>');
-    opacity: 0.3;
-    z-index: 1;
-}
-
-/* ========================================
-   CONTENEDOR PRINCIPAL
-   Layout en 2 columnas: 60% texto + 40% vacío
-   ======================================== */
 .hero__container {
     position: relative;
     z-index: 2;
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 3rem;
+    padding: 2rem;
     display: grid;
-    grid-template-columns: 1.5fr 1fr; /* 60% - 40% */
+    grid-template-columns: 1fr 1.2fr;
     gap: 4rem;
     align-items: center;
-    min-height: 100vh;
+    min-height: calc(var(--hero-height) - var(--header-height));
 }
 
-/* ========================================
-   CONTENIDO DE TEXTO - Alineado a la izquierda
-   ======================================== */
+/* ===================================
+   TEXTO DEL HERO (Lado izquierdo)
+   =================================== */
+
 .hero__content {
-    color: #FFFFFF;
+    color: var(--text-dark);
     text-align: left;
-    padding-right: 2rem;
     animation: fadeInLeft 1s ease-out;
+    padding-right: 1rem;
 }
 
-/* ========================================
-   TÍTULO: "Proyecto Wiñay"
-   Fuente Alegreya para impacto
-   "Wiñay" en amarillo dorado
-   ======================================== */
 .hero__title {
     font-family: 'Alegreya', serif;
-    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    font-size: clamp(2.5rem, 4vw, 4rem);
     font-weight: 900;
-    margin-bottom: 2rem;
-    color: #FFFFFF;
-    line-height: 1.15;
-    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
-    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+    color: var(--neutral-900);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
-/* "Wiñay" en AMARILLO DORADO */
 .hero__highlight {
-    color: #FFD700;
-    display: block;
-    text-shadow: 
-        0 0 25px rgba(255, 215, 0, 0.6),
-        0 0 50px rgba(255, 215, 0, 0.4),
-        0 3px 15px rgba(0, 0, 0, 0.5);
-    animation: gentleGlow 4s ease-in-out infinite alternate;
+    color: var(--primary-color);
+    display: inline;
+    position: relative;
 }
 
-/* ========================================
-   SUBTÍTULO (H3) - Descripción del proyecto
-   Fuente Alegreya para párrafos
-   Texto justificado en bloque
-   ======================================== */
+.hero__highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--accent-primary);
+    opacity: 0.3;
+    z-index: -1;
+    border-radius: 4px;
+}
+
 .hero__subtitle {
     font-family: 'Alegreya', serif;
-    font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
     font-weight: 400;
-    margin-bottom: 3rem;
-    color: #FFFFFF;
-    line-height: 1.75;
-    text-align: justify;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-    max-width: 100%;
+    margin-bottom: 2.5rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    text-align: left;
+    max-width: 90%;
 }
 
-/* ========================================
-   BOTÓN "EXPLORAR PROYECTO"
-   Amarillo dorado con texto morado
-   ======================================== */
 .hero__buttons {
     display: flex;
-    gap: 1.2rem;
+    gap: 1rem;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin-top: 2.5rem;
 }
 
 .btn--hero {
-    display: inline-block;
-    padding: 1.1rem 3rem;
-    background: #FFD700;
-    color: #4B0082;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2.5rem;
+    background: var(--bg-gradient-primary);
+    color: #FFFFFF;
     font-family: 'Alegreya', serif;
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight: 600;
     text-decoration: none;
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 
-        0 6px 20px rgba(255, 215, 0, 0.4),
-        0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-primary);
     position: relative;
     overflow: hidden;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.btn--hero::before {
+.btn--hero:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+    background: linear-gradient(135deg, #38BDF8, #0EA5E9);
+}
+
+.btn--hero::after {
+    content: '→';
+    transition: transform var(--transition-base);
+}
+
+.btn--hero:hover::after {
+    transform: translateX(4px);
+}
+
+/* ===================================
+   SLIDER CONTAINER (Lado derecho)
+   Contenedor fijo que no se expande
+   =================================== */
+
+.hero__slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: var(--slider-aspect-ratio);
+    border-radius: var(--slider-border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-2xl);
+    background: var(--neutral-100);
+    border: 4px solid #FFFFFF;
+}
+
+/* Wrapper del slider */
+.hero__slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Track de slides */
+.hero__slider-track {
+    display: flex;
+    width: 500%; /* 5 slides */
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cada slide */
+.hero__slide {
+    width: 20%; /* 100% / 5 slides */
+    height: 100%;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.hero__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay en imágenes para legibilidad si es necesario */
+.hero__slide::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
-}
-
-.btn--hero:hover {
-    background: #FFC700;
-    transform: translateY(-3px);
-    box-shadow: 
-        0 10px 30px rgba(255, 215, 0, 0.6),
-        0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-.btn--hero:hover::before {
-    width: 400px;
-    height: 400px;
-}
-
-.btn--hero:active {
-    transform: translateY(-1px);
-}
-
-/* ========================================
-   COLUMNA DERECHA (Espacio vacío/decorativo)
-   Se puede usar para elementos visuales opcionales
-   ======================================== */
-.hero__visual {
-    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 60%,
+        rgba(12, 74, 110, 0.3) 100%
+    );
+    pointer-events: none;
+}
+
+/* ===================================
+   CONTROLES DEL SLIDER
+   =================================== */
+
+.hero__slider-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 16px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+}
+
+.hero__slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--neutral-300);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    padding: 0;
+}
+
+.hero__slider-dot:hover {
+    background: var(--primary-light);
+    transform: scale(1.2);
+}
+
+.hero__slider-dot.active {
+    background: var(--primary-color);
+    transform: scale(1.3);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+}
+
+/* Flechas de navegación */
+.hero__slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    transition: all var(--transition-base);
+    z-index: 10;
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
 }
 
-/* Elemento decorativo opcional (círculo con gradiente) */
-.hero__visual::before {
-    content: '';
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(
-        circle,
-        rgba(255, 215, 0, 0.08) 0%,
-        rgba(0, 139, 139, 0.05) 50%,
-        transparent 100%
-    );
-    border-radius: 50%;
-    animation: float 8s ease-in-out infinite;
+.hero__slider-arrow:hover {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--shadow-lg);
 }
 
-/* ========================================
+.hero__slider-arrow.prev {
+    left: 15px;
+}
+
+.hero__slider-arrow.next {
+    right: 15px;
+}
+
+/* ===================================
    INDICADOR DE SCROLL
-   ======================================== */
+   =================================== */
+
 .hero__scroll-indicator {
     position: absolute;
-    bottom: 40px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -237,10 +300,11 @@
 .hero__mouse {
     width: 26px;
     height: 42px;
-    border: 2px solid rgba(255, 215, 0, 0.8);
+    border: 2px solid var(--primary-color);
     border-radius: 16px;
     position: relative;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
 }
 
 .hero__mouse::before {
@@ -251,10 +315,9 @@
     transform: translateX(-50%);
     width: 4px;
     height: 10px;
-    background: #FFD700;
+    background: var(--primary-color);
     border-radius: 3px;
     animation: scroll 2s ease-in-out infinite;
-    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
 }
 
 /* ===================================
@@ -269,33 +332,6 @@
     to {
         opacity: 1;
         transform: translateX(0);
-    }
-}
-
-@keyframes gentleGlow {
-    from {
-        text-shadow: 
-            0 0 25px rgba(255, 215, 0, 0.6),
-            0 0 50px rgba(255, 215, 0, 0.4),
-            0 3px 15px rgba(0, 0, 0, 0.5);
-    }
-    to {
-        text-shadow: 
-            0 0 35px rgba(255, 215, 0, 0.8),
-            0 0 70px rgba(255, 215, 0, 0.5),
-            0 3px 15px rgba(0, 0, 0, 0.5);
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-    25% {
-        transform: translateY(-20px) rotate(2deg);
-    }
-    75% {
-        transform: translateY(-30px) rotate(-2deg);
     }
 }
 
@@ -323,130 +359,104 @@
    RESPONSIVE
    =================================== */
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
     .hero__container {
         grid-template-columns: 1fr;
-        padding: 0 2.5rem;
-        gap: 0;
+        gap: 3rem;
+        text-align: center;
     }
     
     .hero__content {
         padding-right: 0;
-        max-width: 800px;
-    }
-    
-    .hero__visual {
-        display: none;
-    }
-}
-
-@media (max-width: 968px) {
-    .hero {
-        background-attachment: scroll; /* Mejor rendimiento en móviles */
-        background-position: center 42%; /* Más abajo en tablets */
-    }
-    
-    .hero__container {
-        padding: 0 2rem;
+        order: 2;
     }
     
     .hero__title {
-        font-size: clamp(2.2rem, 5vw, 3.5rem);
-        margin-bottom: 1.5rem;
-    }
-    
-    .hero__subtitle {
-        font-size: clamp(1.05rem, 2.5vw, 1.4rem);
-        margin-bottom: 2.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        min-height: 95vh;
-        background-position: center 45%; /* Aún más abajo en móviles */
-        background-attachment: scroll;
-    }
-    
-    .hero__container {
-        padding: 0 1.5rem;
-        justify-content: center;
-    }
-    
-    .hero__content {
-        text-align: center;
+        font-size: clamp(2rem, 5vw, 3rem);
     }
     
     .hero__subtitle {
         text-align: center;
+        max-width: 100%;
     }
     
     .hero__buttons {
         justify-content: center;
     }
     
-    .btn--hero {
-        padding: 1rem 2.5rem;
-        font-size: 1.15rem;
-    }
-    
-    .hero__scroll-indicator {
-        bottom: 30px;
+    .hero__slider-container {
+        order: 1;
+        max-width: 500px;
+        margin: 0 auto;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .hero {
-        min-height: 90vh;
-        background-position: center 48%; /* Máximo ajuste para pantallas muy pequeñas */
-        background-attachment: scroll;
+        padding-top: var(--header-height-mobile);
+        min-height: auto;
+        padding-bottom: 4rem;
     }
     
     .hero__container {
-        padding: 0 1.2rem;
+        min-height: auto;
+        padding: 1.5rem;
+        gap: 2rem;
     }
     
-    .hero__title {
-        margin-bottom: 1.2rem;
+    .hero__slider-container {
+        aspect-ratio: 4/3;
+        max-width: 100%;
+        border-radius: 16px;
+        border-width: 3px;
     }
     
-    .hero__subtitle {
-        font-size: 1.05rem;
-        line-height: 1.65;
-        margin-bottom: 2rem;
+    .hero__slider-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
     }
     
-    .btn--hero {
-        padding: 0.9rem 2rem;
-        font-size: 1.05rem;
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-/* Móviles muy pequeños (375px) */
-@media (max-width: 375px) {
-    .hero {
-        background-position: center 52%; /* Extra ajuste para iPhone SE y similares */
-    }
-}
-
-/* Modo landscape en móviles */
-@media (max-width: 768px) and (orientation: landscape) {
-    .hero {
-        min-height: 140vh;
-        background-position: center 35%; /* Menos desplazamiento en landscape */
-    }
+    .hero__slider-arrow.prev { left: 10px; }
+    .hero__slider-arrow.next { right: 10px; }
     
     .hero__scroll-indicator {
         display: none;
     }
 }
-/* ========================================
-   DISPOSITIVOS CON RESOLUCIONES MUY ALTAS
-   ======================================== */
-@media (min-width: 1920px) {
-    .hero {
-        background-position: center 35%; /* Ajuste para pantallas grandes */
+
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: 1.8rem;
+    }
+    
+    .hero__subtitle {
+        font-size: 1rem;
+    }
+    
+    .btn--hero {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+    
+    .hero__slider-controls {
+        bottom: 15px;
+        padding: 6px 12px;
+        gap: 8px;
+    }
+    
+    .hero__slider-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Ajuste para pantallas muy altas */
+@media (min-height: 1000px) and (min-width: 1024px) {
+    .hero__slider-container {
+        max-width: 700px;
     }
 }

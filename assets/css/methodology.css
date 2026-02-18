@@ -1,0 +1,224 @@
+/* ========================================
+   SECCIÓN METODOLOGÍA
+   ======================================== */
+
+.methodology {
+    padding: 6rem 0;
+    background: white;
+}
+
+.methodology__subtitle {
+    font-size: 2rem;
+    color: #6b21a8;
+    text-align: center;
+    margin: 4rem 0 2rem;
+    font-weight: 700;
+}
+
+/* Overview Cards */
+.methodology__overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.methodology__card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    border-top: 4px solid #6b21a8;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.methodology__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(107, 33, 168, 0.15);
+}
+
+.methodology__card h4 {
+    font-size: 1.3rem;
+    color: #6b21a8;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.methodology__card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+/* Fases Timeline */
+.methodology__phases {
+    margin: 4rem 0;
+}
+
+.phases__timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.phase__item {
+    position: relative;
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.phase__item:hover {
+    box-shadow: 0 10px 25px rgba(107, 33, 168, 0.15);
+}
+
+.phase__item.active {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.phase__header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #6b21a8, #9333ea);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.phase__header:hover {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+}
+
+.phase__number {
+    min-width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.phase__info {
+    flex: 1;
+}
+
+.phase__info h4 {
+    font-size: 1.3rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.phase__duration {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.phase__content {
+    padding: 2rem;
+    transition: max-height 0.3s ease;
+}
+
+.phase__activities {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.phase__activities li {
+    padding: 0.8rem 0 0.8rem 2rem;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+.phase__activities li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #6b21a8;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Locaciones */
+.methodology__locations {
+    margin: 4rem 0;
+}
+
+.locations__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.location__card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.location__card:hover {
+    border-color: #6b21a8;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(107, 33, 168, 0.12);
+}
+
+.location__icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.location__card p {
+    font-size: 1rem;
+    color: #4a5568;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .methodology {
+        padding: 4rem 0;
+    }
+    
+    .methodology__overview {
+        grid-template-columns: 1fr;
+    }
+    
+    .phase__header {
+        padding: 1rem 1.5rem;
+    }
+    
+    .phase__number {
+        min-width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .phase__info h4 {
+        font-size: 1.1rem;
+    }
+    
+    .phase__content {
+        padding: 1.5rem;
+    }
+    
+    .locations__grid {
+        grid-template-columns: 1fr;
+    }
+}
