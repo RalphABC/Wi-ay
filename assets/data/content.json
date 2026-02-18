@@ -1,208 +1,257 @@
 {
-    "hero": {
-      "title": "Proyecto WIÑAY",
-      "subtitle": "Malnutrición, alteraciones de la microbiota intestinal y su relación con alteraciones neuroconductuales en niños y niñas con Trastorno del Espectro Autista en Ecuador",
-      "image": "assets/images/hero-image.jpg"
-    },
-    "about": {
-      "title": "Sobre el Proyecto WIÑAY",
-      "description": "El Proyecto WIÑAY (que significa 'crecer' en quechua) es una investigación innovadora que estudia la relación entre la malnutrición, las alteraciones de la microbiota intestinal y el Trastorno del Espectro Autista (TEA) en niños ecuatorianos. Nuestro objetivo es comprender mejor cómo la nutrición y la salud intestinal impactan el desarrollo neuroconductual en niños con TEA, para desarrollar intervenciones efectivas que mejoren su calidad de vida.",
-      "video": "assets/videos/about-video.mp4",
-      "videoPoster": "assets/images/video-poster.jpg",
-      "stats": [
-        {
-          "number": "500+",
-          "label": "Niños participantes"
-        },
-        {
-          "number": "15",
-          "label": "Instituciones colaboradoras"
-        },
-        {
-          "number": "3",
-          "label": "Años de investigación"
-        },
-        {
-          "number": "20+",
-          "label": "Publicaciones científicas"
-        }
+  "hero": {
+    "title": "Proyecto WIÑAY",
+    "subtitle": "Explorando la relación entre integración sensoriomotora, nutrición y microbiota intestinal en niños con autismo en Ecuador",
+    "image": "assets/images/hero-image.jpg"
+  },
+  "about": {
+    "title": "Sobre el Proyecto WIÑAY",
+    "description": "El Proyecto WIÑAY (que significa 'crecer' en quechua) investiga la relación entre las diferencias en la integración sensoriomotora (medidas de forma objetiva con una herramienta digital), los patrones de alimentación, el estado nutricional y la composición de la microbiota intestinal en niños y adolescentes con autismo, en comparación con niños sin autismo en Ecuador.",
+    "image": "assets/images/primeraimagen.jpg",
+    "stats": [
+      {
+        "number": "130",
+        "label": "Niños participantes"
+      },
+      {
+        "number": "40",
+        "label": "Niños con TEA"
+      },
+      {
+        "number": "90",
+        "label": "Niños en grupos de control"
+      },
+      {
+        "number": "2025-2027",
+        "label": "Periodo del estudio"
+      }
+    ]
+  },
+  "relevance": {
+    "title": "Relevancia del Estudio",
+    "points": [
+      {
+        "icon": "💡",
+        "title": "Enfoque Innovador",
+        "description": "Utiliza una herramienta digital para medir objetivamente la integración sensoriomotora, superando los sesgos culturales de cuestionarios subjetivos."
+      },
+      {
+        "icon": "🌎",
+        "title": "Contexto Único",
+        "description": "Se realiza en la población andina de Ecuador, considerando factores locales relevantes."
+      },
+      {
+        "icon": "🔬",
+        "title": "Visión Integral",
+        "description": "Combina neurofisiología, nutrición y microbioma para comprender mejor el eje intestino-cerebro en el autismo."
+      },
+      {
+        "icon": "🏥",
+        "title": "Impacto Local",
+        "description": "Busca generar recomendaciones aplicables para las familias y el sistema de salud ecuatoriano."
+      }
+    ]
+  },
+  "research": [
+    {
+      "icon": "🧬",
+      "title": "Microbiota Intestinal",
+      "description": "Estudiamos la composición y diversidad de la microbiota intestinal en niños con TEA y su relación con síntomas gastrointestinales y conductuales.",
+      "points": [
+        "Análisis metagenómico",
+        "Identificación de biomarcadores",
+        "Estudios de correlación"
       ]
     },
-    "research": [
-      {
-        "icon": "🧬",
-        "title": "Microbiota Intestinal",
-        "description": "Estudiamos la composición y diversidad de la microbiota intestinal en niños con TEA y su relación con síntomas gastrointestinales y conductuales.",
-        "points": [
-          "Análisis metagenómico",
-          "Identificación de biomarcadores",
-          "Estudios de correlación"
-        ]
-      },
-      {
-        "icon": "🍎",
-        "title": "Nutrición y Malnutrición",
-        "description": "Evaluamos el estado nutricional, patrones alimentarios y deficiencias nutricionales en niños con TEA en Ecuador.",
-        "points": [
-          "Evaluación antropométrica",
-          "Análisis de ingesta dietética",
-          "Detección de déficits nutricionales"
-        ]
-      },
-      {
-        "icon": "🧠",
-        "title": "Desarrollo Neuroconductual",
-        "description": "Investigamos cómo las alteraciones intestinales y nutricionales impactan el desarrollo cognitivo y conductual en TEA.",
-        "points": [
-          "Evaluaciones neurocognitivas",
-          "Análisis de conducta",
-          "Estudios longitudinales"
-        ]
-      },
-      {
-        "icon": "💊",
-        "title": "Intervenciones Terapéuticas",
-        "description": "Desarrollamos y evaluamos intervenciones nutricionales y probióticas para mejorar síntomas en niños con TEA.",
-        "points": [
-          "Suplementación probiótica",
-          "Planes nutricionales personalizados",
-          "Seguimiento de resultados"
-        ]
-      }
-    ],
-    "gallery": {
-      "items": [
-        {
-          "type": "image",
-          "src": "assets/images/gallery/research-lab.jpg",
-          "title": "Laboratorio de Investigación",
-          "description": "Instalaciones de última generación para análisis microbiológico"
-        },
-        {
-          "type": "image",
-          "src": "assets/images/gallery/team-meeting.jpg",
-          "title": "Equipo de Investigación",
-          "description": "Reunión del equipo multidisciplinario del proyecto"
-        },
-        {
-          "type": "video",
-          "src": "assets/videos/gallery/field-work.mp4",
-          "poster": "assets/images/gallery/field-work-poster.jpg",
-          "title": "Trabajo de Campo",
-          "description": "Recolección de datos en comunidades ecuatorianas"
-        },
-        {
-          "type": "image",
-          "src": "assets/images/gallery/children-activity.jpg",
-          "title": "Actividades con Niños",
-          "description": "Sesiones de evaluación neuroconductual"
-        },
-        {
-          "type": "image",
-          "src": "assets/images/gallery/nutrition-workshop.jpg",
-          "title": "Talleres de Nutrición",
-          "description": "Capacitación a familias sobre alimentación saludable"
-        },
-        {
-          "type": "video",
-          "src": "assets/videos/gallery/results-presentation.mp4",
-          "poster": "assets/images/gallery/results-poster.jpg",
-          "title": "Presentación de Resultados",
-          "description": "Compartiendo hallazgos con la comunidad científica"
-        }
+    {
+      "icon": "🍎",
+      "title": "Nutrición y Patrones Alimentarios",
+      "description": "Evaluamos el estado nutricional, patrones alimentarios y deficiencias nutricionales en niños con TEA en Ecuador.",
+      "points": [
+        "Evaluación nutricional personalizada",
+        "Análisis de ingesta dietética",
+        "Detección de déficits nutricionales"
       ]
     },
-    "team": [
-      {
-        "name": "Dra. María Elena Rodríguez",
-        "role": "Directora del Proyecto",
-        "bio": "Especialista en neurología pediátrica con 15 años de experiencia en TEA",
-        "image": "assets/images/team/maria-rodriguez.jpg",
-        "expertise": ["Neurología", "TEA", "Pediatría"],
-        "social": {
-          "email": "maria.rodriguez@universidad.edu.ec",
-          "linkedin": "#"
-        }
-      },
-      {
-        "name": "Dr. Carlos Mendoza",
-        "role": "Investigador Principal - Microbiología",
-        "bio": "Microbiólogo con especialización en microbiota intestinal",
-        "image": "assets/images/team/carlos-mendoza.jpg",
-        "expertise": ["Microbiología", "Metagenómica", "Probióticos"],
-        "social": {
-          "email": "carlos.mendoza@universidad.edu.ec",
-          "linkedin": "#"
-        }
-      },
-      {
-        "name": "Dra. Ana Cristina López",
-        "role": "Nutricionista Investigadora",
-        "bio": "Experta en nutrición pediátrica y trastornos del desarrollo",
-        "image": "assets/images/team/ana-lopez.jpg",
-        "expertise": ["Nutrición", "Pediatría", "Dietética"],
-        "social": {
-          "email": "ana.lopez@universidad.edu.ec",
-          "linkedin": "#"
-        }
-      },
-      {
-        "name": "Dr. Luis Fernando García",
-        "role": "Psicólogo Clínico",
-        "bio": "Especialista en evaluación neuroconductual en niños con TEA",
-        "image": "assets/images/team/luis-garcia.jpg",
-        "expertise": ["Psicología", "Neuropsicología", "TEA"],
-        "social": {
-          "email": "luis.garcia@universidad.edu.ec",
-          "linkedin": "#"
-        }
-      }
-    ],
-    "contact": {
-      "address": {
-        "icon": "📍",
-        "title": "Dirección",
-        "content": "Universidad Central del Ecuador, Facultad de Ciencias Médicas, Quito - Ecuador"
-      },
-      "phone": {
-        "icon": "📞",
-        "title": "Teléfono",
-        "content": "+593 2 XXX-XXXX"
-      },
-      "email": {
-        "icon": "✉️",
-        "title": "Correo Electrónico",
-        "content": "proyecto.winay@universidad.edu.ec"
-      },
-      "hours": {
-        "icon": "🕐",
-        "title": "Horario de Atención",
-        "content": "Lunes a Viernes: 9:00 AM - 5:00 PM"
-      }
+    {
+      "icon": "🧠",
+      "title": "Integración Sensoriomotora",
+      "description": "Medimos objetivamente la integración sensoriomotora mediante herramientas digitales en niños con y sin autismo.",
+      "points": [
+        "Medición objetiva digital",
+        "Evaluaciones neurocognitivas",
+        "Análisis comparativo"
+      ]
     },
-    "footer": {
-      "description": "Investigación dedicada a mejorar la calidad de vida de niños con TEA en Ecuador a través de la comprensión de la relación entre nutrición, microbiota intestinal y desarrollo neuroconductual.",
-      "social": [
-        {
-          "platform": "Facebook",
-          "url": "#",
-          "icon": "📘"
-        },
-        {
-          "platform": "Twitter",
-          "url": "#",
-          "icon": "🐦"
-        },
-        {
-          "platform": "Instagram",
-          "url": "#",
-          "icon": "📷"
-        },
-        {
-          "platform": "LinkedIn",
-          "url": "#",
-          "icon": "💼"
-        }
+    {
+      "icon": "🔗",
+      "title": "Eje Intestino-Cerebro",
+      "description": "Investigamos cómo las alteraciones intestinales y nutricionales impactan el desarrollo neuroconductual en TEA.",
+      "points": [
+        "Estudios de correlación",
+        "Análisis multidisciplinario",
+        "Estudios longitudinales"
       ]
     }
+  ],
+  "ethical": {
+    "title": "Aprobación Ética y Soporte Institucional",
+    "description": "Este estudio cuenta con las autorizaciones y el respaldo de:",
+    "institutions": [
+      {
+        "name": "Comité de Ética de Investigación en Seres Humanos (CEISH)",
+        "entity": "Escuela Superior Politécnica de Chimborazo (ESPOCH)"
+      },
+      {
+        "name": "Instituto de Investigaciones (IDI)",
+        "entity": "ESPOCH"
+      }
+    ],
+    "commitment": "El proyecto se desarrolla bajo los más altos estándares éticos y de rigor científico, garantizando el bienestar y los derechos de todos los participantes."
+  },
+  "timeline": {
+    "start": "Enero 2025",
+    "end": "Enero 2027",
+    "status": "Fase activa de reclutamiento y recolección de datos"
+  },
+  "participation": {
+    "title": "¡Invitación a Participar!",
+    "subtitle": "¿Tiene un hijo/a entre 3 y 17 años? Su participación puede marcar la diferencia.",
+    "description": "Buscamos niños y adolescentes, con y sin diagnóstico de autismo, para ser parte de esta investigación pionera.",
+    "benefits": [
+      "Evaluación nutricional personalizada para su hijo/a",
+      "Asesoría nutricional individual",
+      "Información sobre los resultados generales del estudio"
+    ],
+    "contact": {
+      "name": "Dra. Gabriela Ríos Romero",
+      "phone": "0963520779",
+      "message": "Para más información, inscripciones o consultas"
+    }
+  },
+  "gallery": {
+    "items": [
+      {
+        "type": "image",
+        "src": "assets/images/gallery/research-lab.jpg",
+        "title": "Laboratorio de Investigación",
+        "description": "Instalaciones de última generación para análisis microbiológico"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/gallery/team-meeting.jpg",
+        "title": "Equipo de Investigación",
+        "description": "Reunión del equipo multidisciplinario del proyecto"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/gallery/field-work.jpg",
+        "title": "Trabajo de Campo",
+        "description": "Recolección de datos en comunidades ecuatorianas"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/gallery/children-activity.jpg",
+        "title": "Actividades con Niños",
+        "description": "Sesiones de evaluación neuroconductual"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/gallery/nutrition-workshop.jpg",
+        "title": "Talleres de Nutrición",
+        "description": "Capacitación a familias sobre alimentación saludable"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/gallery/results-presentation.jpg",
+        "title": "Presentación de Resultados",
+        "description": "Compartiendo hallazgos con la comunidad científica"
+      }
+    ]
+  },
+  "team": [
+    {
+      "name": "Dra. Gabriela Ríos Romero",
+      "role": "Coordinadora del Proyecto",
+      "bio": "Especialista en investigación sobre autismo y desarrollo infantil",
+      "image": "assets/images/team/gabriela-rios.jpg",
+      "expertise": ["Pediatría", "TEA", "Investigación Clínica"],
+      "social": {
+        "phone": "0963520779",
+        "email": "gabriela.rios@espoch.edu.ec"
+      }
+    },
+    {
+      "role": "Pediatras",
+      "description": "Especialistas en salud infantil y desarrollo pediátrico",
+      "image": "assets/images/team/pediatras.jpg"
+    },
+    {
+      "role": "Neurólogos y Neuropediatras",
+      "description": "Expertos en desarrollo neurológico infantil",
+      "image": "assets/images/team/neurologos.jpg"
+    },
+    {
+      "role": "Epidemiólogos",
+      "description": "Especialistas en análisis poblacional y metodología de investigación",
+      "image": "assets/images/team/epidemiologos.jpg"
+    },
+    {
+      "role": "Nutricionistas Infantiles",
+      "description": "Expertos en nutrición pediátrica y patrones alimentarios",
+      "image": "assets/images/team/nutricionistas.jpg"
+    },
+    {
+      "role": "Bioestadísticos",
+      "description": "Especialistas en análisis de datos y estadística aplicada",
+      "image": "assets/images/team/bioestadisticos.jpg"
+    }
+  ],
+  "contact": {
+    "address": {
+      "icon": "📍",
+      "title": "Dirección",
+      "content": "Escuela Superior Politécnica de Chimborazo (ESPOCH), Riobamba - Ecuador"
+    },
+    "phone": {
+      "icon": "📞",
+      "title": "Teléfono",
+      "content": "0963520779"
+    },
+    "email": {
+      "icon": "✉️",
+      "title": "Correo Electrónico",
+      "content": "proyecto.winay@espoch.edu.ec"
+    },
+    "hours": {
+      "icon": "🕐",
+      "title": "Horario de Atención",
+      "content": "Lunes a Viernes: 9:00 AM - 5:00 PM"
+    }
+  },
+  "footer": {
+    "description": "Investigación dedicada a mejorar la calidad de vida de niños con autismo en Ecuador a través de la comprensión de la relación entre integración sensoriomotora, nutrición y microbiota intestinal.",
+    "social": [
+      {
+        "platform": "Facebook",
+        "url": "#",
+        "icon": "📘"
+      },
+      {
+        "platform": "Twitter",
+        "url": "#",
+        "icon": "🐦"
+      },
+      {
+        "platform": "Instagram",
+        "url": "#",
+        "icon": "📷"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "#",
+        "icon": "💼"
+      }
+    ]
   }
+}

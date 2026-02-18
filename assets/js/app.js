@@ -213,7 +213,82 @@ class App {
         };
     }
 }
+// ===================================
+// HERO SLIDER
+// ===================================
 
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('slider-track');
+    const slides = document.querySelectorAll('.hero__slide');
+    const dots = document.querySelectorAll('.hero__slider-dot');
+    const prevBtn = document.querySelector('.hero__slider-arrow.prev');
+    const nextBtn = document.querySelector('.hero__slider-arrow.next');
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let autoPlayInterval;
+    
+    // Función para ir a un slide específico
+    function goToSlide(index) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        
+        currentSlide = index;
+        const translateX = -(currentSlide * 20); // 20% por slide
+        track.style.transform = `translateX(${translateX}%)`;
+        
+        // Actualizar dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+        });
+    }
+    
+    // Siguiente slide
+    function nextSlide() {
+        goToSlide(currentSlide + 1);
+    }
+    
+    // Slide anterior
+    function prevSlide() {
+        goToSlide(currentSlide - 1);
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoPlay();
+    });
+    
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoPlay();
+    });
+    
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+            resetAutoPlay();
+        });
+    });
+    
+    // Autoplay
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 5000); // Cambiar cada 5 segundos
+    }
+    
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+    
+    // Iniciar autoplay
+    startAutoPlay();
+    
+    // Pausar cuando el usuario está interactuando
+    const sliderContainer = document.querySelector('.hero__slider-container');
+    sliderContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    sliderContainer.addEventListener('mouseleave', startAutoPlay);
+});
 // Inicializar aplicación
 const app = new App();
 app.init();

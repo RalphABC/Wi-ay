@@ -1,0 +1,114 @@
+/* ========================================
+   CSS PARA LA IMAGEN EN LA SECCIÓN ABOUT
+   ======================================== */
+
+/* Contenedor de la imagen */
+.about-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* La imagen principal */
+.about-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover en la imagen */
+.about-image-container:hover .about-image {
+  transform: scale(1.05);
+}
+
+/* Overlay opcional con degradado */
+.about-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  padding: 2rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.about-image-container:hover .about-image-overlay {
+  opacity: 1;
+}
+
+/* Título de la imagen (opcional) */
+.about-image-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Descripción de la imagen (opcional) */
+.about-image-description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Versión responsive */
+@media (max-width: 768px) {
+  .about-image-container {
+    max-width: 100%;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+  }
+  
+  .about-image-overlay {
+    padding: 1rem;
+  }
+  
+  .about-image-title {
+    font-size: 1.2rem;
+  }
+  
+  .about-image-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animación de entrada */
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-image-container {
+  animation: fadeInImage 0.8s ease-out;
+}
+
+/* Borde decorativo opcional */
+.about-image-container::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.about-image-container:hover::before {
+  opacity: 1;
+}
