@@ -560,3 +560,7 @@ section {
 body.sidebar-open {
     overflow: hidden;
 }
+
+body.menu-open {
+    overflow: hidden;
+}

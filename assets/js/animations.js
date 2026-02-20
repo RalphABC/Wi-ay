@@ -20,72 +20,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-/* ========================================
-   MENÚ HAMBURGUESA: Abrir/Cerrar
-   Controla el menú móvil desplegable
-   ======================================== */
-document.addEventListener('DOMContentLoaded', function() {
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const body = document.body;
-
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            // Alternar clase "active" para mostrar/ocultar menú
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            body.classList.toggle('menu-open');
-        });
-    }
-
-    /* ========================================
-       CERRAR MENÚ al hacer clic en un link
-       Mejora UX en móviles
-       ======================================== */
-    const navLinks = document.querySelectorAll('.nav__link');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Cerrar menú móvil
-            if (navToggle && navMenu) {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                body.classList.remove('menu-open');
-            }
-            
-            // Actualizar link activo
-            navLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-
-    /* ========================================
-       CERRAR MENÚ al hacer clic fuera
-       Cierra el menú si se hace clic en el overlay
-       ======================================== */
-    document.addEventListener('click', function(event) {
-        const isClickInsideNav = navMenu?.contains(event.target) || navToggle?.contains(event.target);
-        
-        if (!isClickInsideNav && navMenu?.classList.contains('active')) {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-    });
-
-    /* ========================================
-       CERRAR MENÚ con tecla ESC
-       ======================================== */
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && navMenu?.classList.contains('active')) {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-    });
-});
-
 // ===================================
 // ANIMATIONS - Animaciones y efectos
 // ===================================
@@ -101,13 +35,10 @@ class Animations {
         this.setupCounters();
         this.setupSmoothScroll();
         this.setupActiveNavigation();
+        this.setupMethodology();
     }
 
-    /* ========================================
-       ANIMACIONES AL HACER SCROLL
-       Los elementos aparecen gradualmente
-       cuando entran en el viewport
-       ======================================== */
+  
     setupScrollAnimations() {
         const elements = document.querySelectorAll(
             '.research__card, .team__card, .gallery__item, .about__content, .contact__content'
@@ -136,11 +67,7 @@ class Animations {
         });
     }
 
-    /* ========================================
-       EFECTO PARALLAX para HERO - OPTIMIZADO
-       Crea efecto de profundidad al hacer scroll
-       con optimización de rendimiento
-       ======================================== */
+    
     setupParallax() {
         const hero = document.querySelector('.hero');
         
@@ -172,10 +99,7 @@ class Animations {
         }
     }
 
-    /* ========================================
-       CONTADOR ANIMADO para estadísticas
-       Anima números de 0 hasta el valor final
-       ======================================== */
+   
     setupCounters() {
         const counters = document.querySelectorAll('.stat__number');
         const speed = 200;
@@ -217,10 +141,6 @@ class Animations {
         counters.forEach(counter => observer.observe(counter));
     }
 
-    /* ========================================
-       SMOOTH SCROLL para navegación - MEJORADO
-       Scroll suave al hacer clic en enlaces internos
-       ======================================== */
     setupSmoothScroll() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -245,10 +165,7 @@ class Animations {
         });
     }
 
-    /* ========================================
-       HIGHLIGHT de sección activa en navegación
-       Marca el link del menú según la sección visible
-       ======================================== */
+  
     setupActiveNavigation() {
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav__link');
@@ -276,10 +193,7 @@ class Animations {
         sections.forEach(section => observer.observe(section));
     }
 
-    /* ========================================
-       EFECTO DE TYPING (opcional)
-       Simula escritura automática de texto
-       ======================================== */
+   
     typeWriter(element, text, speed = 50) {
         let i = 0;
         element.textContent = '';
@@ -294,6 +208,80 @@ class Animations {
         
         type();
     }
+    
+
+setupMethodology() {
+    this.setupMethodologyStats();
+    this.setupMethodologyEntrance();
+}
+
+
+setupMethodologyStats() {
+    const stats = document.querySelectorAll('.methodology__stat-number[data-target]');
+
+    const animateStat = (el) => {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        const duration = 1400; // ms
+        const start = performance.now();
+        const initial = 0;
+
+        const step = (timestamp) => {
+            const elapsed = timestamp - start;
+            const progress = Math.min(elapsed / duration, 1);
+            // Easing: ease-out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(initial + (target - initial) * eased);
+            el.textContent = current.toLocaleString();
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                el.textContent = target.toLocaleString();
+            }
+        };
+
+        requestAnimationFrame(step);
+    };
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStat(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.5 }
+    );
+
+    stats.forEach(stat => observer.observe(stat));
+}
+
+setupMethodologyEntrance() {
+    const items = document.querySelectorAll(
+        '.phase__item, .focus__item'
+    );
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        }
+    );
+
+    items.forEach(item => observer.observe(item));
+}
+
+
 }
 
 // Instancia global de la clase Animations
