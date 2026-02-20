@@ -1,4 +1,4 @@
-// ===================================
+﻿// ===================================
 // APP - JavaScript principal
 // ===================================
 
@@ -11,7 +11,7 @@ class App {
     }
 
     async init() {
-        // Esperar a que el DOM esté completamente cargado
+        // Esperar a que el DOM estÃ© completamente cargado
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.setup());
         } else {
@@ -27,56 +27,70 @@ class App {
         this.contactForm = document.getElementById('contact-form');
 
         // Cargar datos desde JSON
-        await dataLoader.init();
 
         // Inicializar componentes
         this.setupNavigation();
-        this.setupScrollEffects();
         this.setupContactForm();
         
-        // Inicializar galería y animaciones
-        gallery.init();
-        animations.init();
-        animations.setupSmoothScroll();
-        animations.setupActiveNavigation();
+        // Inicializar galerÃ­a y animaciones
+        if (typeof gallery !== 'undefined' && gallery && typeof gallery.init === 'function') {
+            gallery.init();
+        }
+        if (typeof animations !== 'undefined' && animations && typeof animations.init === 'function') {
+            animations.init();
+        }
 
-        // Añadir loading completo
+        this.setCurrentYear();
+
+        // AÃ±adir loading completo
         this.hideLoader();
     }
 
-    // Configurar navegación móvil
+    // Configurar navegaciÃ³n mÃ³vil
     setupNavigation() {
         if (this.navToggle && this.navMenu) {
+            const body = document.body;
+
+            const closeMenu = () => {
+                this.navMenu.classList.remove('active');
+                this.navToggle.classList.remove('active');
+                this.navToggle.setAttribute('aria-expanded', 'false');
+                body.classList.remove('menu-open');
+            };
+
             this.navToggle.addEventListener('click', () => {
                 this.navMenu.classList.toggle('active');
                 this.navToggle.classList.toggle('active');
+                const isOpen = this.navMenu.classList.contains('active');
+                this.navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                body.classList.toggle('menu-open', isOpen);
             });
 
-            // Cerrar menú al hacer clic en un enlace
             const navLinks = document.querySelectorAll('.nav__link');
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    this.navMenu.classList.remove('active');
-                    this.navToggle.classList.remove('active');
+                    closeMenu();
                 });
             });
 
-            // Cerrar menú al hacer clic fuera
             document.addEventListener('click', (e) => {
                 if (!this.navMenu.contains(e.target) && !this.navToggle.contains(e.target)) {
-                    this.navMenu.classList.remove('active');
-                    this.navToggle.classList.remove('active');
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeMenu();
                 }
             });
         }
     }
 
-  
-
-    // Crear botón de scroll to top
+    // Crear botÃ³n de scroll to top
     createScrollTopButton() {
         const button = document.createElement('button');
-        button.innerHTML = '↑';
+        button.innerHTML = 'â†‘';
         button.className = 'scroll-to-top';
         button.style.cssText = `
             position: fixed;
@@ -139,15 +153,15 @@ class App {
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
 
-        // Aquí puedes integrar con tu backend
-        // Por ahora, solo simularemos el envío
+        // AquÃ­ puedes integrar con tu backend
+        // Por ahora, solo simularemos el envÃ­o
         
         try {
-            // Simulación de envío (reemplazar con tu API)
+            // SimulaciÃ³n de envÃ­o (reemplazar con tu API)
             await this.simulateFormSubmission(data);
             
-            // Mostrar mensaje de éxito
-            this.showFormMessage('success', '¡Mensaje enviado exitosamente! Nos pondremos en contacto pronto.');
+            // Mostrar mensaje de Ã©xito
+            this.showFormMessage('success', 'Â¡Mensaje enviado exitosamente! Nos pondremos en contacto pronto.');
             
             // Limpiar formulario
             e.target.reset();
@@ -164,7 +178,7 @@ class App {
             console.log('Datos del formulario:', data);
             
             setTimeout(() => {
-                // Simular éxito (90% de las veces)
+                // Simular Ã©xito (90% de las veces)
                 if (Math.random() > 0.1) {
                     resolve();
                 } else {
@@ -187,7 +201,7 @@ class App {
         messageElement.textContent = message;
         messageElement.classList.add('active');
 
-        // Ocultar después de 5 segundos
+        // Ocultar despuÃ©s de 5 segundos
         setTimeout(() => {
             messageElement.classList.remove('active');
         }, 5000);
@@ -197,6 +211,13 @@ class App {
         const loader = document.querySelector('.loader');
         if (loader) {
             loader.style.display = 'none';
+        }
+    }
+
+    setCurrentYear() {
+        const yearElement = document.getElementById('current-year');
+        if (yearElement) {
+            yearElement.textContent = String(new Date().getFullYear());
         }
     }
 
@@ -228,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalSlides = slides.length;
     let autoPlayInterval;
     
-    // Función para ir a un slide específico
+    // FunciÃ³n para ir a un slide especÃ­fico
     function goToSlide(index) {
         if (index < 0) index = totalSlides - 1;
         if (index >= totalSlides) index = 0;
@@ -284,14 +305,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Iniciar autoplay
     startAutoPlay();
     
-    // Pausar cuando el usuario está interactuando
+    // Pausar cuando el usuario estÃ¡ interactuando
     const sliderContainer = document.querySelector('.hero__slider-container');
     sliderContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
     sliderContainer.addEventListener('mouseleave', startAutoPlay);
 });
-// Inicializar aplicación
+// Inicializar aplicaciÃ³n
 const app = new App();
 app.init();
 
 // Exportar para uso global (opcional)
 window.app = app;
+
+
+

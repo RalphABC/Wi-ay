@@ -1,18 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Proyecto WIÑAY - Malnutrición, microbiota intestinal y trastorno del espectro autista en niños de Ecuador">
-    <meta name="keywords" content="autismo, TEA, microbiota, malnutrición, Ecuador, niños, investigación">
-    <title>Proyecto WIÑAY | Investigación TEA Ecuador</title>
-    
-    <!-- Fuente Alegreya desde Google Fonts -->
+    <meta name="description" content="Proyecto Winay en Ecuador: integracion sensoriomotora, nutricion y microbiota intestinal en ninos con autismo.">
+    <meta name="keywords" content="autismo, TEA, microbiota, nutricion, Ecuador, investigacion">
+    <title>Proyecto Winay | Investigacion en Autismo Ecuador</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Estilos CSS - Orden importa: primero global, luego específicos -->
+
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/hero.css">
@@ -27,33 +25,21 @@
     <link rel="stylesheet" href="assets/css/footer.css">
 </head>
 <body>
-    
-    <!-- ========================================
-         HEADER / NAVEGACIÓN
-         ======================================== -->
+
     <header class="header" id="header">
         <nav class="nav container">
-            <div class="">
-                <a href="#inicio">
-                    <!-- Opción 1: Logo como imagen -->
-                    <!-- <img src="assets/images/logo-wiñay.png" alt="Proyecto WIÑAY" class="nav__logo"> -->
-                    
-                    <!-- Opción 2: Logo como texto -->
-                    <!-- <h1>WIÑAY</h1> -->
-                </a>
+            <div class="nav__logo">
+                <a href="#inicio" class="nav__logo-text">WINAY</a>
             </div>
-            
+
             <ul class="nav__menu" id="nav-menu">
                 <li class="nav__item"><a href="#inicio" class="nav__link active">INICIO</a></li>
-                <li class="nav__item"><a href="#sobre-proyecto" class="nav__link">MISIÓN</a></li>
-                <li class="nav__item"><a href="#objetivos" class="nav__link">OBJETIVOS</a></li>
-                <li class="nav__item"><a href="#investigacion" class="nav__link">INVESTIGACIÓN</a></li>
-                <li class="nav__item"><a href="#equipo" class="nav__link">EQUIPO</a></li>
-                <li class="nav__item"><a href="#galeria" class="nav__link">MULTIMEDIA</a></li>
+                <li class="nav__item"><a href="#sobre-proyecto" class="nav__link">OBJETIVO</a></li>
+                <li class="nav__item"><a href="#equipo" class="nav__link">PARTICIPAR</a></li>
                 <li class="nav__item"><a href="#contacto" class="nav__link">CONTACTO</a></li>
             </ul>
-            
-            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu"></button>
+
+            <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menu de navegacion" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -61,50 +47,32 @@
         </nav>
     </header>
 
-    <!-- ========================================
-         SECCIÓN HERO
-         ======================================== -->
     <section class="hero" id="inicio">
         <div class="hero__container container">
             <div class="hero__content">
-                <h1 class="hero__title">
-                    Proyecto <span class="hero__highlight">Wiñay</span>
-                </h1>
-                
+                <h1 class="hero__title">Proyecto <span class="hero__highlight">Winay</span></h1>
                 <h3 class="hero__subtitle">
-                    Investigando el vínculo crítico entre la desnutrición, la microbiota intestinal 
-                    y los trastornos neuroconductuales en niños con TEA en Ecuador
+                    Explorando la relacion entre integracion sensoriomotora, nutricion y microbiota intestinal en ninos con autismo en Ecuador.
                 </h3>
-                
                 <div class="hero__buttons">
-                    <a href="#investigacion" class="btn btn--hero">Explorar proyecto</a>
+                    <a href="#sobre-proyecto" class="btn btn--hero">Conocer el estudio</a>
                 </div>
             </div>
 
             <div class="hero__slider-container">
                 <div class="hero__slider">
                     <div class="hero__slider-track" id="slider-track">
-                        <div class="hero__slide">
-                            <img src="assets/images/inicio.jpg" alt="Investigación TEA Ecuador">
-                        </div>
-                        <div class="hero__slide">
-                            <img src="assets/images/inicio2.jpg" alt="Microbiota intestinal">
-                        </div>
-                        <div class="hero__slide">
-                            <img src="assets/images/inicio3.jpg" alt="Nutrición infantil">
-                        </div>
-                        <div class="hero__slide">
-                            <img src="assets/images/inicio4.jpg" alt="Equipo de investigación">
-                        </div>
-                        <div class="hero__slide">
-                            <img src="assets/images/inicio5.jpg" alt="Comunidad Ecuador">
-                        </div>
+                        <div class="hero__slide"><img src="assets/images/inicio.jpg" alt="Proyecto Winay en Ecuador"></div>
+                        <div class="hero__slide"><img src="assets/images/inicio2.jpg" alt="Evaluacion nutricional infantil"></div>
+                        <div class="hero__slide"><img src="assets/images/inicio3.jpg" alt="Integracion sensoriomotora"></div>
+                        <div class="hero__slide"><img src="assets/images/inicio4.jpg" alt="Equipo de especialistas"></div>
+                        <div class="hero__slide"><img src="assets/images/inicio5.jpg" alt="Trabajo con familias"></div>
                     </div>
                 </div>
-                
-                <button class="hero__slider-arrow prev" aria-label="Imagen anterior">‹</button>
-                <button class="hero__slider-arrow next" aria-label="Imagen siguiente">›</button>
-                
+
+                <button class="hero__slider-arrow prev" aria-label="Imagen anterior">&#8249;</button>
+                <button class="hero__slider-arrow next" aria-label="Imagen siguiente">&#8250;</button>
+
                 <div class="hero__slider-controls">
                     <button class="hero__slider-dot active" data-slide="0" aria-label="Ir a slide 1"></button>
                     <button class="hero__slider-dot" data-slide="1" aria-label="Ir a slide 2"></button>
@@ -114,259 +82,574 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="hero__scroll-indicator">
             <div class="hero__mouse"></div>
         </div>
     </section>
 
-    <!-- ========================================
-         SECCIÓN SOBRE EL PROYECTO
-         ======================================== -->
     <section class="about" id="sobre-proyecto">
         <div class="container">
-            <h2 class="section__title" id="about-title">Sobre el Proyecto</h2>
+            <h2 class="section__title" id="about-title">Objetivo del Proyecto</h2>
             <div class="about__content">
                 <div class="about__text">
-                    <p id="about-description"> <center>Explorando la relación entre integración sensoriomotora, nutrición y microbiota intestinal en niños con autismo en Ecuador.El Proyecto WIÑAY busca generar evidencia científica en población ecuatoriana sobre la relación entre estado nutricional, microbiota intestinal y desarrollo neuroconductual.
-</center></p>
+                    <p id="about-description">
+                        Investigar la relacion entre las diferencias en la integracion sensoriomotora (medidas de forma objetiva con una herramienta digital), los patrones de alimentacion, el estado nutricional y la composicion de la microbiota intestinal en ninos y adolescentes con autismo, en comparacion con ninos sin autismo en Ecuador.
+                    </p>
                     <div class="about__stats" id="about-stats">
-                        <!-- Se llenará dinámicamente desde JSON -->
+                        <div class="stat">
+                            <div class="stat__number">2025</div>
+                            <div class="stat__text">Inicio del estudio</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__number">2027</div>
+                            <div class="stat__text">Fin planificado</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__number">3-17</div>
+                            <div class="stat__text">Rango de edad</div>
+                        </div>
                     </div>
                 </div>
                 <div class="about-image-wrapper">
-  <img src="assets/images/primeraimagen.jpg" alt="Proyecto Wiñay" class="about-image">
-  <div class="about-image-overlay">
-    <h3>Proyecto Wiñay</h3>
-    <p>Investigación en autismo Ecuador</p>
-  </div>
-</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         SECCIÓN OBJETIVOS DEL PROYECTO
-         ======================================== -->
-    <section class="objectives" id="objetivos">
-        <div class="container">
-            <h2 class="section__title">Objetivos del Proyecto</h2>
-            
-            <div class="objectives__content">
-                <div class="objectives__general">
-                    <div class="objectives__icon">🎯</div>
-                    <h3>Objetivo General</h3>
-                    <p id="objetivo-general"> <center>Investigar la relación entre las diferencias en la integración sensoriomotora (medidas de forma objetiva con una herramienta digital), los patrones de alimentación, el estado nutricional y la composición de la microbiota intestinal en niños y adolescentes con autismo, en comparación con niños sin autismo en Ecuador.</center></p>
-                </div>
-                
-                <div class="objectives__specific">
-                    <h3>Objetivos Específicos</h3>
-                    <div class="objectives__list" id="objetivos-especificos">
-                        <!-- Se llenará dinámicamente -->
+                    <img src="assets/images/primeraimagen.jpg" alt="Proyecto Winay" class="about-image">
+                    <div class="about-image-overlay">
+                        <h3>Proyecto Winay</h3>
+                        <p>Investigacion clinica y nutricional en Ecuador</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================
-         SECCIÓN INVESTIGACIÓN
-         ======================================== -->
+    <section class="objectives" id="objetivos">
+        <div class="container">
+            <h2 class="section__title">Aprobacion Etica y Soporte Institucional</h2>
+            <div class="objectives__content">
+                <div class="objectives__general">
+                    <div class="objectives__icon">OK</div>
+                    <h3>Compromiso Etico</h3>
+                    <p id="objetivo-general">
+                        El proyecto se desarrolla bajo altos estandares eticos y de rigor cientifico, garantizando el bienestar y los derechos de todos los participantes.
+                    </p>
+                </div>
+                <div class="objectives__specific">
+                    <h3>Autorizaciones y respaldo</h3>
+                    <div class="objectives__list" id="objetivos-especificos">
+                        <div class="objective__item"><p>Comite de Etica de Investigacion en Seres Humanos (CEISH) de la Escuela Superior Politecnica de Chimborazo (ESPOCH).</p></div>
+                        <div class="objective__item"><p>Instituto de Investigaciones (IDI) de la ESPOCH.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="research" id="investigacion">
         <div class="container">
-            <h2 class="section__title">Áreas de Investigación</h2>
-            <div class="research__grid" id="research-grid">
-                <!-- Se llenará dinámicamente desde JSON -->
-            </div>
+            <h2 class="section__title">Equipo de Expertos</h2>
+
+            <div class="research__map">
+
+                <!-- Centro: imagen -->
+                <div class="research__center">
+                    <img
+                        src="assets/images/primeraimagen.jpg"
+                        alt="Equipo Proyecto Winay"
+                        class="research__center-img"
+                    >
+                </div>
+
+                <!-- Nodo 1 — arriba (Pediatras) -->
+                <div class="research__node research__node--1">
+                    <div class="research__node-inner">
+                        <div class="research__node-icon">🩺</div>
+                        <div class="research__node-content">
+                            <p class="research__node-title">Pediatras</p>
+                            <p class="research__node-desc">Evaluación clínica integral de niños y adolescentes participantes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nodo 2 — derecha arriba (Neurólogos) -->
+                <div class="research__node research__node--2">
+                    <div class="research__node-inner">
+                        <div class="research__node-icon">🧠</div>
+                        <div class="research__node-content">
+                            <p class="research__node-title">Neurólogos y Neuropediatras</p>
+                            <p class="research__node-desc">Análisis del neurodesarrollo e integración sensoriomotora.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nodo 3 — derecha abajo (Epidemiólogos) -->
+                <div class="research__node research__node--3">
+                    <div class="research__node-inner">
+                        <div class="research__node-icon">📊</div>
+                        <div class="research__node-content">
+                            <p class="research__node-title">Epidemiólogos</p>
+                            <p class="research__node-desc">Diseño del estudio y control de calidad metodológica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nodo 4 — izquierda abajo (Nutricionistas) -->
+                <div class="research__node research__node--4">
+                    <div class="research__node-inner">
+                        <div class="research__node-icon">🥗</div>
+                        <div class="research__node-content">
+                            <p class="research__node-title">Nutricionistas infantiles</p>
+                            <p class="research__node-desc">Valoración nutricional y asesoría personalizada para familias.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nodo 5 — izquierda arriba (Bioestadísticos) -->
+                <div class="research__node research__node--5">
+                    <div class="research__node-inner">
+                        <div class="research__node-icon">🔬</div>
+                        <div class="research__node-content">
+                            <p class="research__node-title">Bioestadísticos</p>
+                            <p class="research__node-desc">Procesamiento de datos y análisis para resultados robustos.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.research__map -->
         </div>
     </section>
 
-    <!-- ========================================
-         SECCIÓN METODOLOGÍA
-         ======================================== -->
+
+
     <section class="methodology" id="metodologia">
         <div class="container">
-            <h2 class="section__title">Metodología de Investigación</h2>
-            
-            <div class="methodology__overview">
-                <div class="methodology__card">
-                    <h4>Diseño del Estudio</h4>
-                    <p id="method-design">Cargando...</p>
+
+            <h2 class="section__title">Cronograma del Estudio</h2>
+
+            <!-- STATS ANIMADOS — números grandes -->
+            <div class="methodology__stats">
+                <div class="methodology__stat">
+                    <span class="methodology__stat-number" data-target="2025">2025</span>
+                    <span class="methodology__stat-label">Año de inicio</span>
+                    <span class="methodology__stat-badge">Activo</span>
                 </div>
-                <div class="methodology__card">
-                    <h4>Población</h4>
-                    <p id="method-population">Cargando...</p>
+                <div class="methodology__stat">
+                    <span class="methodology__stat-number" data-target="2027">2027</span>
+                    <span class="methodology__stat-label">Culminación prevista</span>
                 </div>
-                <div class="methodology__card">
-                    <h4>Muestra</h4>
-                    <p id="method-sample">Cargando...</p>
+                <div class="methodology__stat">
+                    <span class="methodology__stat-number" data-target="130">130</span>
+                    <span class="methodology__stat-label">Participantes totales</span>
+                    <span class="methodology__stat-badge">Reclutando</span>
                 </div>
-                <div class="methodology__card">
-                    <h4>Duración</h4>
-                    <p id="method-duration">Cargando...</p>
-                </div>
-            </div>
-            
-            <div class="methodology__phases">
-                <h3 class="methodology__subtitle">Fases del Proyecto</h3>
-                <div class="phases__timeline" id="phases-timeline">
-                    <!-- Se llenará dinámicamente -->
+                <div class="methodology__stat">
+                    <span class="methodology__stat-number" data-target="3">3</span>
+                    <span class="methodology__stat-label">Fases del estudio</span>
                 </div>
             </div>
-            
-            <div class="methodology__locations">
-                <h3 class="methodology__subtitle">Locaciones del Estudio</h3>
-                <div class="locations__grid" id="locations-grid">
-                    <!-- Se llenará dinámicamente -->
+
+            <!-- TIMELINE DE FASES -->
+            <p class="methodology__subtitle">Fases principales</p>
+
+            <div class="methodology__timeline-wrap">
+                <!-- Línea de progreso visual -->
+                <div class="methodology__timeline-track">
+                    <div class="methodology__timeline-progress"></div>
+                </div>
+
+                <div class="phases__timeline">
+
+                    <!-- Fase 1: completada -->
+                    <div class="phase__item phase__item--done">
+                        <div class="phase__node">1</div>
+                        <div class="phase__body">
+                            <span class="phase__label">Planificación y aprobaciones</span>
+                            <span class="phase__period">2024 – 2025</span>
+                            <span class="phase__status">Completada</span>
+                        </div>
+                    </div>
+
+                    <!-- Fase 2: activa -->
+                    <div class="phase__item phase__item--active">
+                        <div class="phase__node">2</div>
+                        <div class="phase__body">
+                            <span class="phase__label">Reclutamiento y mediciones</span>
+                            <span class="phase__period">2025 – 2026</span>
+                            <span class="phase__status">En curso</span>
+                        </div>
+                    </div>
+
+                    <!-- Fase 3: próxima -->
+                    <div class="phase__item phase__item--next">
+                        <div class="phase__node">3</div>
+                        <div class="phase__body">
+                            <span class="phase__label">Análisis y reporte final</span>
+                            <span class="phase__period">2026 – 2027</span>
+                            <span class="phase__status">Próximamente</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
+            <!-- ENFOQUE DEL ESTUDIO -->
+            <p class="methodology__subtitle">Enfoque del estudio</p>
+
+            <div class="methodology__focus">
+                <div class="focus__grid">
+
+                    <div class="focus__item">
+                        <span class="focus__bg-letter">A</span>
+                        <div class="focus__icon">📱</div>
+                        <span class="focus__title">Medición digital objetiva</span>
+                        <p class="focus__desc">Herramienta digital validada para la evaluación objetiva de la integración sensoriomotora.</p>
+                    </div>
+
+                    <div class="focus__item">
+                        <span class="focus__bg-letter">B</span>
+                        <div class="focus__icon">🔄</div>
+                        <span class="focus__title">Grupos comparativos</span>
+                        <p class="focus__desc">Comparación sistemática entre niños con TEA y grupo de control en condiciones equivalentes.</p>
+                    </div>
+
+                    <div class="focus__item">
+                        <span class="focus__bg-letter">C</span>
+                        <div class="focus__icon">🧬</div>
+                        <span class="focus__title">Eje intestino-cerebro</span>
+                        <p class="focus__desc">Análisis conjunto de neurofisiología, nutrición y microbiota intestinal como sistema integrado.</p>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- ========================================
-         SECCIÓN PUBLICACIONES
-         ======================================== -->
+
     <section class="publications" id="publicaciones">
         <div class="container">
-            <h2 class="section__title">Publicaciones y Resultados</h2>
-            <div class="publications__list" id="publications-list">
-                <!-- Se llenará dinámicamente -->
+            <h2 class="section__title">Relevancia del Estudio</h2>
+
+            <div class="publications__list">
+
+                <article class="publication__item">
+                    <div class="publication__accent">
+                        <span class="publication__accent-num">01</span>
+                    </div>
+                    <div class="publication__body">
+                        <h3 class="publication__title">Enfoque innovador</h3>
+                        <p class="publication__authors">Uso de herramienta digital para medición objetiva de integración sensoriomotora.</p>
+                    </div>
+                </article>
+
+                <article class="publication__item">
+                    <div class="publication__accent">
+                        <span class="publication__accent-num">02</span>
+                    </div>
+                    <div class="publication__body">
+                        <h3 class="publication__title">Contexto único</h3>
+                        <p class="publication__authors">Investigación en población andina de Ecuador con factores locales relevantes.</p>
+                    </div>
+                </article>
+
+                <article class="publication__item">
+                    <div class="publication__accent">
+                        <span class="publication__accent-num">03</span>
+                    </div>
+                    <div class="publication__body">
+                        <h3 class="publication__title">Visión integral</h3>
+                        <p class="publication__authors">Integra neurofisiología, nutrición y microbioma en el eje intestino-cerebro.</p>
+                    </div>
+                </article>
+
+                <article class="publication__item">
+                    <div class="publication__accent">
+                        <span class="publication__accent-num">04</span>
+                    </div>
+                    <div class="publication__body">
+                        <h3 class="publication__title">Impacto local</h3>
+                        <p class="publication__authors">Busca recomendaciones aplicables a familias y al sistema de salud ecuatoriano.</p>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <!-- ========================================
-         SECCIÓN GALERÍA
-         ======================================== -->
     <section class="gallery" id="galeria">
         <div class="container">
-            <h2 class="section__title">Galería Multimedia</h2>
-            
+            <h2 class="section__title">Avances y Resultados Preliminares</h2>
             <div class="gallery__filters">
                 <button class="gallery__filter active" data-filter="all">Todos</button>
-                <button class="gallery__filter" data-filter="images">Imágenes</button>
-                <button class="gallery__filter" data-filter="videos">Videos</button>
+                <button class="gallery__filter" data-filter="images">Con TEA</button>
+                <button class="gallery__filter" data-filter="videos">Grupo control</button>
             </div>
-            
             <div class="gallery__grid" id="gallery-grid">
-                <!-- Se llenará dinámicamente desde JSON -->
+                <div class="gallery__item" data-type="all">
+                    <img src="assets/images/inicio.jpg" alt="Total de participantes">
+                    <div class="gallery__overlay"><h3>Total de ninos participantes: 130</h3></div>
+                </div>
+                <div class="gallery__item" data-type="images">
+                    <img src="assets/images/inicio2.jpg" alt="Ninos con TEA">
+                    <div class="gallery__overlay"><h3>Ninos con TEA: 40</h3></div>
+                </div>
+                <div class="gallery__item" data-type="videos">
+                    <img src="assets/images/inicio3.jpg" alt="Ninos en grupo de control">
+                    <div class="gallery__overlay"><h3>Ninos en grupos de control: 90</h3></div>
+                </div>
             </div>
         </div>
-        
+
         <div class="gallery__modal" id="gallery-modal">
             <span class="gallery__close">&times;</span>
-            <img class="gallery__modal-content" id="modal-image">
+            <img class="gallery__modal-content" id="modal-image" alt="Vista ampliada">
             <div class="gallery__caption" id="modal-caption"></div>
         </div>
     </section>
 
-    <!-- ========================================
-         SECCIÓN EQUIPO
-         ======================================== -->
-    <section class="team" id="equipo">
+    <!-- 
+=============================================================
+  REEMPLAZA tu sección <section class="team"> completa.
+  
+  Estructura nueva:
+  1. .team__hero        — banner con imagen + título + CTA
+  2. .team__cards-section — 3 cards de participación
+  3. .team__trust       — banda de stats de confianza
+
+  Imagen del hero: url('../images/inicio4.jpg') en el CSS.
+  Puedes cambiarla por la imagen que más te guste.
+=============================================================
+-->
+
+<section class="team" id="equipo">
+
+    <!-- 1. HERO BANNER -->
+    <div class="team__hero">
         <div class="container">
-            <h2 class="section__title">Nuestro Equipo</h2>
-            <div class="team__grid" id="team-grid">
-                <!-- Se llenará dinámicamente desde JSON -->
+            <div class="team__hero-content">
+
+                <span class="team__hero-eyebrow">Estudio abierto · Ecuador 2025</span>
+
+                <h2 class="team__hero-title">
+                    Tu familia puede ser<br>
+                    parte del <em>cambio</em>
+                </h2>
+
+                <p class="team__hero-sub">
+                    Buscamos niños y adolescentes de 3 a 17 años, con y sin diagnóstico de autismo,
+                    para contribuir a una investigación que mejorará la calidad de vida de miles de familias ecuatorianas.
+                </p>
+
+                <a href="#contacto" class="team__hero-cta">
+                    Quiero participar
+                    <span class="team__hero-cta-arrow">→</span>
+                </a>
+
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- ========================================
-         SECCIÓN FAQ
-         ======================================== -->
-    <section class="faq" id="preguntas-frecuentes">
+    <!-- 2. CARDS DE PARTICIPACIÓN -->
+    <div class="team__cards-section">
         <div class="container">
-            <h2 class="section__title">Preguntas Frecuentes</h2>
-            <div class="faq__container" id="faq-container">
-                <!-- Se llenará dinámicamente -->
+            <div class="team__grid">
+
+                <!-- Card 1: Quiénes pueden participar -->
+                <article class="team__card">
+                    <div class="team__card-stripe"></div>
+                    <div class="team__card-icon">👨‍👩‍👧‍👦</div>
+                    <div class="team__content">
+                        <h3 class="team__name">¿Quiénes pueden participar?</h3>
+                        <p class="team__bio">
+                            Niños y adolescentes entre <strong>3 y 17 años</strong>, con o sin diagnóstico de autismo (TEA),
+                            residentes en Ecuador. No se requiere experiencia previa ni condición especial.
+                        </p>
+                        <div class="team__tag-list">
+                            <span class="team__tag">3–17 años</span>
+                            <span class="team__tag">Con o sin TEA</span>
+                            <span class="team__tag">Ecuador</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Beneficios -->
+                <article class="team__card">
+                    <div class="team__card-stripe"></div>
+                    <div class="team__card-icon">🎁</div>
+                    <div class="team__content">
+                        <h3 class="team__name">Beneficios para tu familia</h3>
+                        <p class="team__bio">
+                            Al participar recibirás una <strong>evaluación nutricional personalizada</strong>,
+                            asesoría individual con especialistas e información detallada de los
+                            resultados generales del estudio. Todo sin costo.
+                        </p>
+                        <div class="team__tag-list">
+                            <span class="team__tag">Gratuito</span>
+                            <span class="team__tag">Evaluación nutricional</span>
+                            <span class="team__tag">Asesoría</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: Por qué participar -->
+                <article class="team__card">
+                    <div class="team__card-stripe"></div>
+                    <div class="team__card-icon">🌱</div>
+                    <div class="team__content">
+                        <h3 class="team__name">¿Por qué importa tu participación?</h3>
+                        <p class="team__bio">
+                            Cada familia que se suma aporta evidencia científica única.
+                            Tu colaboración ayudará a construir <strong>recomendaciones reales</strong>
+                            para el sistema de salud ecuatoriano y familias con autismo.
+                        </p>
+                        <div class="team__tag-list">
+                            <span class="team__tag">Ciencia real</span>
+                            <span class="team__tag">Impacto local</span>
+                            <span class="team__tag">Confidencial</span>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- ========================================
-         SECCIÓN COLABORADORES
-         ======================================== -->
+    <!-- 3. BANDA DE CONFIANZA -->
+    <div class="team__trust">
+        <div class="container">
+            <div class="team__trust-inner">
+
+                <div class="team__trust-item">
+                    <span class="team__trust-icon">🔒</span>
+                    <div class="team__trust-text">
+                        <strong>100% confidencial</strong>
+                        <span>Datos protegidos</span>
+                    </div>
+                </div>
+
+                <div class="team__trust-item">
+                    <span class="team__trust-icon">✅</span>
+                    <div class="team__trust-text">
+                        <strong>Aprobado éticamente</strong>
+                        <span>CEISH – ESPOCH</span>
+                    </div>
+                </div>
+
+                <div class="team__trust-item">
+                    <span class="team__trust-icon">👩‍⚕️</span>
+                    <div class="team__trust-text">
+                        <strong>Equipo especializado</strong>
+                        <span>Pediatras y nutricionistas</span>
+                    </div>
+                </div>
+
+                <div class="team__trust-item">
+                    <span class="team__trust-icon">📞</span>
+                    <div class="team__trust-text">
+                        <strong>0963 520 779</strong>
+                        <span>Dra. Gabriela Ríos</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
     <section class="partners" id="colaboradores">
         <div class="container">
-            <h2 class="section__title">Instituciones Colaboradoras</h2>
+            <h2 class="section__title">Instituciones de Respaldo</h2>
             <div class="partners__grid" id="partners-grid">
-                <!-- Se llenará dinámicamente -->
+                <div class="partner__card" data-type="etica">
+                    <p class="partner__name">CEISH - ESPOCH</p>
+                    <span class="partner__type">Aprobacion etica</span>
+                </div>
+                <div class="partner__card" data-type="investigacion">
+                    <p class="partner__name">IDI - ESPOCH</p>
+                    <span class="partner__type">Soporte institucional</span>
+                </div>
+                <div class="partner__card" data-type="proyecto">
+                    <p class="partner__name">Proyecto Winay</p>
+                    <span class="partner__type">Ejecucion multidisciplinaria</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================
-         SECCIÓN CONTACTO
-         ======================================== -->
     <section class="contact" id="contacto">
         <div class="container">
-            <h2 class="section__title">Contáctanos</h2>
+            <h2 class="section__title">Contacto e Inscripciones</h2>
             <div class="contact__content">
                 <div class="contact__info" id="contact-info">
-                    <!-- Se llenará dinámicamente desde JSON -->
+                    <h3>Informacion de contacto</h3>
+                    <div class="contact__item">
+                        <div class="contact__icon">Dr</div>
+                        <div class="contact__details">
+                            <h4>Dra. Gabriela Rios Romero</h4>
+                            <p>Coordinacion del Proyecto Winay</p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <div class="contact__icon">Tel</div>
+                        <div class="contact__details">
+                            <h4>Telefono</h4>
+                            <a href="tel:+593963520779">0963520779</a>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <div class="contact__icon">Edad</div>
+                        <div class="contact__details">
+                            <h4>Grupo elegible</h4>
+                            <p>Ninos y adolescentes de 3 a 17 anos</p>
+                        </div>
+                    </div>
                 </div>
+
                 <form class="contact__form" id="contact-form">
-                    <div class="form__group">
-                        <input type="text" name="name" placeholder="Nombre completo" required>
-                    </div>
-                    <div class="form__group">
-                        <input type="email" name="email" placeholder="Correo electrónico" required>
-                    </div>
-                    <div class="form__group">
-                        <input type="text" name="subject" placeholder="Asunto" required>
-                    </div>
-                    <div class="form__group">
-                        <textarea name="message" rows="5" placeholder="Mensaje" required></textarea>
-                    </div>
+                    <div class="form__group"><input type="text" name="name" placeholder="Nombre completo" required></div>
+                    <div class="form__group"><input type="email" name="email" placeholder="Correo electronico" required></div>
+                    <div class="form__group"><input type="text" name="subject" placeholder="Asunto" required></div>
+                    <div class="form__group"><textarea name="message" rows="5" placeholder="Mensaje" required></textarea></div>
                     <button type="submit" class="btn btn--primary">Enviar mensaje</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- ========================================
-         FOOTER
-         ======================================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer__content">
                 <div class="footer__section">
-                    <h3>Proyecto WIÑAY</h3>
-                    <p id="footer-description">Cargando...</p>
+                    <h3>Proyecto WINAY</h3>
+                    <p id="footer-description">Investigacion ecuatoriana sobre integracion sensoriomotora, nutricion y microbiota en ninos con autismo.</p>
                 </div>
                 <div class="footer__section">
-                    <h3>Enlaces Rápidos</h3>
+                    <h3>Enlaces Rapidos</h3>
                     <ul class="footer__links">
                         <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#sobre-proyecto">Misión</a></li>
-                        <li><a href="#objetivos">Objetivos</a></li>
-                        <li><a href="#investigacion">Investigación</a></li>
-                        <li><a href="#equipo">Equipo</a></li>
+                        <li><a href="#sobre-proyecto">Objetivo</a></li>
+                        <li><a href="#objetivos">Etica</a></li>
+                        <li><a href="#investigacion">Equipo</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer__section">
-                    <h3>Redes Sociales</h3>
+                    <h3>Estado del estudio</h3>
                     <div class="footer__social" id="footer-social">
-                        <!-- Se llenará dinámicamente desde JSON -->
+                        <p>Activo: reclutamiento y recoleccion de datos</p>
                     </div>
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; <span id="current-year"></span> Proyecto WIÑAY - Ecuador. Todos los derechos reservados.</p>
+                <p>&copy; <span id="current-year"></span> Proyecto WINAY - Ecuador. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- ========================================
-         Scripts JavaScript
-         ======================================== -->
-    <script src="assets/js/data-loader.js"></script>
-    <script src="assets/js/data-loader-extended.js"></script>
     <script src="assets/js/gallery.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/app.js"></script>
-    
+
 </body>
 </html>
