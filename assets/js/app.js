@@ -317,5 +317,36 @@ app.init();
 // Exportar para uso global (opcional)
 window.app = app;
 
+// ===================================
+// FORMULARIO DE CONTACTO → WHATSAPP
+// ===================================
+const contactForm = document.getElementById('contact-form');
 
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('contact-name').value.trim();
+        const age = document.getElementById('contact-child-age').value.trim();
+        const teaMap = {
+            'si': 'Sí tiene diagnóstico de TEA',
+            'no': 'No tiene diagnóstico (grupo control)',
+            'proceso': 'Está en proceso de diagnóstico',
+            'consultar': 'Prefiere consultarlo directamente'
+        };
+        const teaRaw = document.getElementById('contact-has-tea').value;
+        const tea = teaMap[teaRaw] || teaRaw;
+        const msg = document.getElementById('contact-message').value.trim();
+
+        let text = `Hola, me interesa el *Proyecto Wiñay*.\n\n`;
+        text += `👤 *Nombre:* ${name}\n`;
+        text += `🧒 *Edad del niño/a:* ${age} años\n`;
+        text += `🧩 *TEA:* ${tea}\n`;
+        if (msg) text += `💬 *Consulta:* ${msg}\n`;
+        text += `\n¿Podrían orientarme sobre el proceso de inscripción?`;
+
+        const url = `https://wa.me/593963520779?text=${encodeURIComponent(text)}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
+    });
+}
 

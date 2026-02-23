@@ -1,7 +1,9 @@
 /* ========================================
    SECCIÓN EQUIPO DE EXPERTOS - RESEARCH
-   Proyecto WINAY — Pentágono radial
-   5 nodos con clases individuales (sin nth-child)
+   Proyecto WINAY — Heptágono radial (7 nodos)
+   Coordenadas calculadas matemáticamente:
+   Centro: top=400px, left=50%, radio=250px
+   Ángulo inicial: -90° (arriba), sentido horario
    ======================================== */
 
 .research {
@@ -21,13 +23,14 @@
 
 /* =============================================
    MAPA — DESKTOP (≥ 900px)
-   Centro: top=380px, left=50%, radio=240px
+   Centro: top=400px, left=50%, radio=250px
+   Altura total: 400 + 250 + 80 (nodo) = ~730px
    ============================================= */
 
 .research__map {
     position: relative;
     width: 100%;
-    height: 740px;
+    height: 780px; /* cy(400) + r(250) + node_half(80) + padding(50) */
     display: block;
 }
 
@@ -37,7 +40,7 @@
     position: absolute;
     width: 500px;
     height: 500px;
-    top: 380px;
+    top: 400px;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 1.5px dashed rgba(14, 165, 233, 0.2);
@@ -54,7 +57,7 @@
 /* ---- Centro ---- */
 .research__center {
     position: absolute;
-    top: 380px;
+    top: 400px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 150px;
@@ -111,27 +114,77 @@
     to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
-/* ---- Posición de cada nodo por clase (pentágono, radio 240px) ----
-   Nodo 1 -90°: top=140px,   left=50%
-   Nodo 2 -18°: top=305.8px, left=calc(50% + 228.3px)
-   Nodo 3  54°: top=574.2px, left=calc(50% + 141.1px)
-   Nodo 4 126°: top=574.2px, left=calc(50% - 141.1px)
-   Nodo 5 198°: top=305.8px, left=calc(50% - 228.3px)
-*/
+/* =============================================
+   POSICIONES DEL HEPTÁGONO
+   Centro: top=400px, left=50%
+   Radio=250px, ángulo inicial=-90°, paso=51.43°
 
-.research__node--1 { top: 140px;   left: 50%;                    animation-delay: 0.1s; }
-.research__node--2 { top: 305.8px; left: calc(50% + 228.3px);    animation-delay: 0.2s; }
-.research__node--3 { top: 574.2px; left: calc(50% + 141.1px);    animation-delay: 0.3s; }
-.research__node--4 { top: 574.2px; left: calc(50% - 141.1px);    animation-delay: 0.4s; }
-.research__node--5 { top: 305.8px; left: calc(50% - 228.3px);    animation-delay: 0.5s; }
+   Nodo 1 (-90.00°): top= 150px, left=calc(50% +   0.0px)
+   Nodo 2 (-38.57°): top= 244px, left=calc(50% + 195.5px)
+   Nodo 3 ( 12.86°): top= 456px, left=calc(50% + 243.7px)
+   Nodo 4 ( 64.29°): top= 625px, left=calc(50% + 108.5px)
+   Nodo 5 (115.71°): top= 625px, left=calc(50% - 108.5px)
+   Nodo 6 (167.14°): top= 456px, left=calc(50% - 243.7px)
+   Nodo 7 (218.57°): top= 244px, left=calc(50% - 195.5px)
+   ============================================= */
 
-/* ---- Líneas conectoras (ángulo = posición_nodo + 180°) ---- */
+.research__node--1 {
+    top:  150px;
+    left: calc(50% + 0px);
+    animation-delay: 0.10s;
+}
+.research__node--2 {
+    top:  244px;
+    left: calc(50% + 195.5px);
+    animation-delay: 0.17s;
+}
+.research__node--3 {
+    top:  456px;
+    left: calc(50% + 243.7px);
+    animation-delay: 0.24s;
+}
+.research__node--4 {
+    top:  625px;
+    left: calc(50% + 108.5px);
+    animation-delay: 0.31s;
+}
+.research__node--5 {
+    top:  625px;
+    left: calc(50% - 108.5px);
+    animation-delay: 0.38s;
+}
+.research__node--6 {
+    top:  456px;
+    left: calc(50% - 243.7px);
+    animation-delay: 0.45s;
+}
+.research__node--7 {
+    top:  244px;
+    left: calc(50% - 195.5px);
+    animation-delay: 0.52s;
+}
+
+/* ---- Líneas conectoras ----
+   transform-origin: left center
+   La línea apunta desde el nodo hacia el centro.
+   Ángulo = (ángulo_nodo + 180°) % 360°
+   Largo = radio (250px) para alcanzar el centro
+   --------------------------------
+   Nodo 1: rotate(90.00deg)
+   Nodo 2: rotate(141.43deg)
+   Nodo 3: rotate(192.86deg)
+   Nodo 4: rotate(244.29deg)
+   Nodo 5: rotate(295.71deg)
+   Nodo 6: rotate(347.14deg)
+   Nodo 7: rotate(38.57deg)
+   -------------------------------- */
+
 .research__node::before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 240px;
+    width: 250px;
     height: 1.5px;
     background: linear-gradient(90deg, rgba(14, 165, 233, 0.55), rgba(14, 165, 233, 0.04));
     transform-origin: left center;
@@ -139,11 +192,13 @@
     pointer-events: none;
 }
 
-.research__node--1::before { transform: rotate(90deg); }
-.research__node--2::before { transform: rotate(162deg); }
-.research__node--3::before { transform: rotate(234deg); }
-.research__node--4::before { transform: rotate(306deg); }
-.research__node--5::before { transform: rotate(18deg); }
+.research__node--1::before { transform: rotate(90.00deg); }
+.research__node--2::before { transform: rotate(141.43deg); }
+.research__node--3::before { transform: rotate(192.86deg); }
+.research__node--4::before { transform: rotate(244.29deg); }
+.research__node--5::before { transform: rotate(295.71deg); }
+.research__node--6::before { transform: rotate(347.14deg); }
+.research__node--7::before { transform: rotate(38.57deg); }
 
 /* ---- Burbuja ---- */
 .research__node-inner {
@@ -196,7 +251,7 @@
     margin: 0;
 }
 
-/* Descripción con transición suave, sin display:none */
+/* Descripción con transición suave */
 .research__node-desc {
     font-size: 0.68rem;
     color: var(--text-muted);
@@ -228,6 +283,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 0;
     }
 
     .research__map::after { display: none; }
@@ -245,13 +301,15 @@
     .research__center::before,
     .research__center::after { display: none; }
 
-    /* Todos los nodos pasan a cards */
+    /* Todos los nodos pasan a cards en flujo normal */
     .research__node,
     .research__node--1,
     .research__node--2,
     .research__node--3,
     .research__node--4,
-    .research__node--5 {
+    .research__node--5,
+    .research__node--6,
+    .research__node--7 {
         position: relative;
         top: auto !important;
         left: auto !important;
@@ -264,11 +322,17 @@
     .research__node::before { display: none; }
 
     /* Grid 2 columnas */
-    .research__cards-grid {
+    .research__map {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
-        width: 100%;
+        padding: 0;
+    }
+
+    /* El centro ocupa las 2 columnas, centrado */
+    .research__center {
+        grid-column: 1 / -1;
+        justify-self: center;
     }
 
     /* Card horizontal */
@@ -306,7 +370,7 @@
 }
 
 @media (max-width: 560px) {
-    .research__cards-grid {
+    .research__map {
         grid-template-columns: 1fr;
     }
 
